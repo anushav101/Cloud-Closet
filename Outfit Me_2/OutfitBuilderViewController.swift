@@ -90,6 +90,13 @@ class OutfitBuilderViewController: UIViewController {
     }
     */
 
+    @IBAction func back(sender: AnyObject) {
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitViewController") // again change to your view
+        self.navigationController?.pushViewController(vc as! OutfitViewController, animated: true)
+        
+        
+    }
 }
 
 extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegate{

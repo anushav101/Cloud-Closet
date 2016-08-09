@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.release.xcconfig"; sourceTree = "<group>"; };
-		240FCB121D37F67400401405 /* Outfit Me_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Outfit Me_2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		240FCB121D37F67400401405 /* Cloud Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloud Closet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		240FCB151D37F67400401405 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		240FCB171D37F67400401405 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		240FCB1A1D37F67400401405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		240FCB131D37F67400401405 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				240FCB121D37F67400401405 /* Outfit Me_2.app */,
+				240FCB121D37F67400401405 /* Cloud Closet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		240FCB111D37F67400401405 /* Outfit Me_2 */ = {
+		240FCB111D37F67400401405 /* Cloud Closet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 240FCB241D37F67400401405 /* Build configuration list for PBXNativeTarget "Outfit Me_2" */;
+			buildConfigurationList = 240FCB241D37F67400401405 /* Build configuration list for PBXNativeTarget "Cloud Closet" */;
 			buildPhases = (
 				6D131B4A19EC5D93F5F47860 /* [CP] Check Pods Manifest.lock */,
 				240FCB0E1D37F67400401405 /* Sources */,
@@ -213,9 +213,9 @@
 			);
 			dependencies = (
 			);
-			name = "Outfit Me_2";
+			name = "Cloud Closet";
 			productName = "Outfit Me_2";
-			productReference = 240FCB121D37F67400401405 /* Outfit Me_2.app */;
+			productReference = 240FCB121D37F67400401405 /* Cloud Closet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 240FCB0D1D37F67400401405 /* Build configuration list for PBXProject "Outfit Me_2" */;
+			buildConfigurationList = 240FCB0D1D37F67400401405 /* Build configuration list for PBXProject "Cloud Closet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -247,7 +247,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				240FCB111D37F67400401405 /* Outfit Me_2 */,
+				240FCB111D37F67400401405 /* Cloud Closet */,
 			);
 		};
 /* End PBXProject section */
@@ -470,8 +470,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Outfit-Me-2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AnushaVenkatesan.CloudCloset;
+				PRODUCT_NAME = "Cloud Closet";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -485,8 +485,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Outfit-Me-2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AnushaVenkatesan.CloudCloset;
+				PRODUCT_NAME = "Cloud Closet";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -494,7 +494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		240FCB0D1D37F67400401405 /* Build configuration list for PBXProject "Outfit Me_2" */ = {
+		240FCB0D1D37F67400401405 /* Build configuration list for PBXProject "Cloud Closet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				240FCB221D37F67400401405 /* Debug */,
@@ -503,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		240FCB241D37F67400401405 /* Build configuration list for PBXNativeTarget "Outfit Me_2" */ = {
+		240FCB241D37F67400401405 /* Build configuration list for PBXNativeTarget "Cloud Closet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				240FCB251D37F67400401405 /* Debug */,

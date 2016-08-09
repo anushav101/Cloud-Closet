@@ -655,7 +655,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mU1-Bg-cnI" id="dcE-UV-FGl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="192"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="191.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G7j-9T-Ku6">
@@ -669,7 +669,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitCollectionViewCell" id="ioP-LD-dt4" customClass="OutfitBuilderCollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-1" width="183" height="172"/>
+                                                            <rect key="frame" x="0.0" y="-0.5" width="183" height="172"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="172"/>
@@ -733,6 +733,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="Pgh-2o-fCV" eventType="touchUpInside" id="q3u-G2-bkl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
