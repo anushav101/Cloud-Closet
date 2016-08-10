@@ -46,6 +46,7 @@
 		24D8A0F41D59714C0004356B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F31D59714B0004356B /* FeedViewController.swift */; };
 		24D8A0F61D597AAE0004356B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F51D597AAE0004356B /* FeedTableViewCell.swift */; };
 		24D8A0F81D59A0A20004356B /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */; };
+		AEC7185AD2104A34B1BDDDDD /* Pods_Cloud_Closet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32E8961CCA0C351F88A4575 /* Pods_Cloud_Closet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,9 @@
 		24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.debug.xcconfig"; sourceTree = "<group>"; };
 		92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outfit_Me_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E3A0A49651DC4FB67BF54F /* Pods-Cloud Closet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloud Closet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cloud Closet/Pods-Cloud Closet.debug.xcconfig"; sourceTree = "<group>"; };
+		E32E8961CCA0C351F88A4575 /* Pods_Cloud_Closet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cloud_Closet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95A29EA05522A66E0EC48A9 /* Pods-Cloud Closet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloud Closet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cloud Closet/Pods-Cloud Closet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17754AA6ABF6C6DC7715C42D /* Pods_Outfit_Me_2.framework in Frameworks */,
+				AEC7185AD2104A34B1BDDDDD /* Pods_Cloud_Closet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +188,8 @@
 			children = (
 				691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */,
 				12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */,
+				D8E3A0A49651DC4FB67BF54F /* Pods-Cloud Closet.debug.xcconfig */,
+				F95A29EA05522A66E0EC48A9 /* Pods-Cloud Closet.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */,
+				E32E8961CCA0C351F88A4575 /* Pods_Cloud_Closet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cloud Closet/Pods-Cloud Closet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6D131B4A19EC5D93F5F47860 /* [CP] Check Pods Manifest.lock */ = {
@@ -310,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cloud Closet/Pods-Cloud Closet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -463,7 +471,7 @@
 		};
 		240FCB251D37F67400401405 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */;
+			baseConfigurationReference = D8E3A0A49651DC4FB67BF54F /* Pods-Cloud Closet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -478,7 +486,7 @@
 		};
 		240FCB261D37F67400401405 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */;
+			baseConfigurationReference = F95A29EA05522A66E0EC48A9 /* Pods-Cloud Closet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

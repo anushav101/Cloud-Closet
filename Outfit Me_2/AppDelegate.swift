@@ -8,12 +8,31 @@
 
 import UIKit
 import Parse
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    func testGoogleCustomSearch() {
+        let bundleID = "com.makeschool.Outfit"
+        
+        let q = "galaxy+beanie"
+        let key = "AIzaSyAjNmmSpUwAjWPq-SLWVnqLvwdEf5zHnmo"
+        let cx = "017126530825900472415:6gcgyqv_ffg"
+        
+        let urlString = "https://www.googleapis.com/customsearch/v1?q=\(q)&key=\(key)&cx=\(cx)&searchType=image"
+        
+        Alamofire.request(.GET,
+            urlString,
+            parameters: nil,
+            encoding: .JSON,
+            headers: ["X-Ios-Bundle-Identifier" : bundleID])
+            .responseJSON { (response) in
+                print(response)
+        }
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -30,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let acl = PFACL()
         acl.publicReadAccess = true
         PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
+        
+        testGoogleCustomSearch()
         
         //        let product = PFObject(className: "Product")
         //        product["category"] = "test 3"

@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '9.0'
 
-target ‘Outfit Me_2’ do
+target ‘Cloud Closet’ do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -10,6 +10,7 @@ target ‘Outfit Me_2’ do
   pod 'Parse'
   pod 'ParseFacebookUtilsV4'
   pod 'ParseUI'
+  pod 'Alamofire', '~> 3.4'
 
  # target ‘Outfit Me_2Tests’ do
   #  inherit! :search_paths

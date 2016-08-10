@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C1E0CE786F62FEB0F11F99680A0F3F3C"
-               BuildableName = "Pods_Outfit_Me_2.framework"
-               BlueprintName = "Pods-Outfit Me_2"
+               BlueprintIdentifier = "FAA88BF7A4CBE0AD1FB4968B45667313"
+               BuildableName = "Pods_Cloud_Closet.framework"
+               BlueprintName = "Pods-Cloud Closet"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C1E0CE786F62FEB0F11F99680A0F3F3C"
-            BuildableName = "Pods_Outfit_Me_2.framework"
-            BlueprintName = "Pods-Outfit Me_2"
+            BlueprintIdentifier = "FAA88BF7A4CBE0AD1FB4968B45667313"
+            BuildableName = "Pods_Cloud_Closet.framework"
+            BlueprintName = "Pods-Cloud Closet"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

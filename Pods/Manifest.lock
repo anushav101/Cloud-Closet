@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.4.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -24,6 +25,7 @@ PODS:
     - Parse (~> 1.9)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.4)
   - Bond (= 4.0.0)
   - ConvenienceKit
   - Parse
@@ -31,6 +33,7 @@ DEPENDENCIES:
   - ParseUI
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Bond: b729cdb22552def86efd4adfd8b8d93061eb4649
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
@@ -40,6 +43,6 @@ SPEC CHECKSUMS:
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
 
-PODFILE CHECKSUM: c0e5a3f2803d7152e1ba7d95bc5c6afead7f93af
+PODFILE CHECKSUM: 88e411b1f1a9396d0275792db5da09326a5569f7
 
 COCOAPODS: 1.0.1
