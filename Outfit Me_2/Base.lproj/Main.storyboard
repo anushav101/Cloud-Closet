@@ -1714,6 +1714,45 @@
             </objects>
             <point key="canvasLocation" x="842" y="1634"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qtI-ZX-aOV">
+            <objects>
+                <viewController id="0E1-7A-HRj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7L7-D8-Olp"/>
+                        <viewControllerLayoutGuide type="bottom" id="0rg-Fx-Mcb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sib-fH-2yz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-iv-IJf">
+                                <rect key="frame" x="0.0" y="56" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0rg-Fx-Mcb" firstAttribute="top" secondItem="p8L-iv-IJf" secondAttribute="bottom" constant="536" id="8CN-5A-NN3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p8L-iv-IJf" secondAttribute="trailing" constant="-20" id="Eii-fH-JMj"/>
+                            <constraint firstItem="p8L-iv-IJf" firstAttribute="top" secondItem="7L7-D8-Olp" secondAttribute="bottom" id="HaW-7d-Zys"/>
+                            <constraint firstItem="p8L-iv-IJf" firstAttribute="leading" secondItem="sib-fH-2yz" secondAttribute="leadingMargin" constant="-20" id="aab-ea-eio"/>
+                            <constraint firstItem="0rg-Fx-Mcb" firstAttribute="top" secondItem="p8L-iv-IJf" secondAttribute="bottom" constant="528" id="eum-Au-auM"/>
+                            <constraint firstItem="p8L-iv-IJf" firstAttribute="top" secondItem="7L7-D8-Olp" secondAttribute="bottom" constant="8" id="h1b-u8-D6C"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HaW-7d-Zys"/>
+                                <exclude reference="h1b-u8-D6C"/>
+                                <exclude reference="8CN-5A-NN3"/>
+                                <exclude reference="eum-Au-auM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afv-RF-0FI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="bedroom-black-closed-closet-for-clothes" width="32" height="32"/>
