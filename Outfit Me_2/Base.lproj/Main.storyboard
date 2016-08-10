@@ -9,7 +9,7 @@
         <!--My Closet-->
         <scene sceneID="nHD-ls-rhZ">
             <objects>
-                <viewController title="My Closet" id="XSh-bo-Xie" customClass="ViewController" customModule="Outfit_Me_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="My Closet" id="XSh-bo-Xie" customClass="ViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zhd-eN-kVV"/>
                         <viewControllerLayoutGuide type="bottom" id="sWA-XG-hmv"/>
@@ -112,7 +112,7 @@
                                     </variation>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Categories" rowHeight="279" id="ei3-1s-gjX" userLabel="Categories" customClass="TableViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Categories" rowHeight="279" id="ei3-1s-gjX" userLabel="Categories" customClass="TableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="600" height="279"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ei3-1s-gjX" id="XTO-2E-D26">
@@ -132,7 +132,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CollectionViewCell" id="MOu-OH-dSw" customClass="CollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CollectionViewCell" id="MOu-OH-dSw" customClass="CollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.5" width="232" height="185.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -321,8 +321,8 @@
                                     <action selector="deleteClothing:" destination="XSh-bo-Xie" eventType="touchUpInside" id="WxS-vz-NjB"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHY-M9-qYc">
-                                <rect key="frame" x="120" y="80" width="250" height="183"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHY-M9-qYc">
+                                <rect key="frame" x="175" y="208.5" width="250" height="183"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-1d-rnU">
                                         <rect key="frame" x="8" y="8" width="234" height="105"/>
@@ -540,7 +540,7 @@
         <!--Outfit Builder -->
         <scene sceneID="htp-Ga-cfg">
             <objects>
-                <viewController restorationIdentifier="OutfitBuilderViewController" storyboardIdentifier="OutfitBuilderViewController" title="Outfit Builder " id="Pgh-2o-fCV" customClass="OutfitBuilderViewController" customModule="Outfit_Me_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OutfitBuilderViewController" storyboardIdentifier="OutfitBuilderViewController" title="Outfit Builder " id="Pgh-2o-fCV" customClass="OutfitBuilderViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GpA-e4-lb1"/>
                         <viewControllerLayoutGuide type="bottom" id="KzW-oc-HV4"/>
@@ -651,7 +651,7 @@
                                 <rect key="frame" x="0.0" y="172" width="600" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutfitCategories" rowHeight="192" id="mU1-Bg-cnI" customClass="OutfitBuilderTableViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutfitCategories" rowHeight="192" id="mU1-Bg-cnI" customClass="OutfitBuilderTableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mU1-Bg-cnI" id="dcE-UV-FGl">
@@ -668,7 +668,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitCollectionViewCell" id="ioP-LD-dt4" customClass="OutfitBuilderCollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitCollectionViewCell" id="ioP-LD-dt4" customClass="OutfitBuilderCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="-0.5" width="183" height="172"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -789,7 +789,7 @@
         <!--Outfits-->
         <scene sceneID="ewf-4T-C5D">
             <objects>
-                <viewController restorationIdentifier="OutfitViewController" storyboardIdentifier="OutfitViewController" title="Outfits" id="jF3-Pw-0QB" customClass="OutfitViewController" customModule="Outfit_Me_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OutfitViewController" storyboardIdentifier="OutfitViewController" title="Outfits" id="jF3-Pw-0QB" customClass="OutfitViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cTA-9r-RP9"/>
                         <viewControllerLayoutGuide type="bottom" id="mf3-pc-ZBW"/>
@@ -896,7 +896,7 @@
                                 <rect key="frame" x="0.0" y="174" width="600" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Outfits" rowHeight="180" id="bPU-yN-KM0" customClass="OutfitTableViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Outfits" rowHeight="180" id="bPU-yN-KM0" customClass="OutfitTableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPU-yN-KM0" id="vAI-Gf-ITc">
@@ -913,7 +913,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitArticle" id="EQi-6i-DgL" customClass="OutfitCollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitArticle" id="EQi-6i-DgL" customClass="OutfitCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="129"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1057,7 +1057,7 @@
         <!--FeedViewController-->
         <scene sceneID="vSs-1y-0zZ">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OFV-UI-zz9" customClass="FeedViewController" customModule="Outfit_Me_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OFV-UI-zz9" customClass="FeedViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KTq-SA-bBS"/>
                         <viewControllerLayoutGuide type="bottom" id="ei3-Fm-oig"/>
@@ -1144,7 +1144,7 @@
                                 <rect key="frame" x="0.0" y="120" width="600" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="277" id="C01-1i-hEA" customClass="FeedTableViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="277" id="C01-1i-hEA" customClass="FeedTableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="277"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C01-1i-hEA" id="c2o-D8-Giw">
@@ -1161,7 +1161,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FeedCollectionCell" reuseIdentifier="FeedCollectionCell" id="tOh-5W-Gtf" customClass="FeedCollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FeedCollectionCell" reuseIdentifier="FeedCollectionCell" id="tOh-5W-Gtf" customClass="FeedCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="10.5" width="173" height="146"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1192,13 +1192,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y06-ZZ-2IP">
                                                     <rect key="frame" x="14" y="8" width="268" height="21"/>
                                                     <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created At " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7s-Ue-qVc">
                                                     <rect key="frame" x="435" y="8" width="147" height="21"/>
                                                     <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-PZ-3qH" userLabel="love">
@@ -1248,31 +1248,31 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-aL-3R1" userLabel="loveCount">
                                                     <rect key="frame" x="317" y="256" width="36" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLd-Ii-Ktr" userLabel="winkCount">
                                                     <rect key="frame" x="376" y="256" width="36" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-yt-3op" userLabel="coolCount">
                                                     <rect key="frame" x="435" y="256" width="36" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-ba-ZGI" userLabel="indifferentCount">
                                                     <rect key="frame" x="491" y="256" width="36" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfL-3D-Zk6" userLabel="deadCount">
                                                     <rect key="frame" x="546" y="256" width="36" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqB-tH-HwE">
@@ -1285,6 +1285,88 @@
                                                         <action selector="flagContent:" destination="C01-1i-hEA" eventType="touchUpInside" id="uP9-sT-XtM"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr7-uE-XB1" userLabel="ModalView">
+                                                    <rect key="frame" x="175" y="47" width="250" height="183"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-vN-oQG">
+                                                            <rect key="frame" x="8" y="8" width="234" height="105"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="234" id="5Hj-xH-G1H"/>
+                                                                <constraint firstAttribute="height" constant="105" id="AFE-ID-mVi"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yo0-Z6-Lz8">
+                                                            <rect key="frame" x="37" y="121" width="79" height="40"/>
+                                                            <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79" id="60n-ED-csi"/>
+                                                                <constraint firstAttribute="width" constant="30" id="Wxa-th-vjq"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aQK-jO-PBo"/>
+                                                                <constraint firstAttribute="width" constant="75" id="d16-24-7op"/>
+                                                                <constraint firstAttribute="height" constant="40" id="kU2-HH-V8J"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Cancel">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Wxa-th-vjq"/>
+                                                                    <exclude reference="aQK-jO-PBo"/>
+                                                                    <exclude reference="60n-ED-csi"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <connections>
+                                                                <action selector="cancelButton:" destination="C01-1i-hEA" eventType="touchUpInside" id="BFZ-n4-Qqp"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-qM-ON3" userLabel="Report">
+                                                            <rect key="frame" x="138" y="121" width="75" height="40"/>
+                                                            <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="N5v-gw-0fi"/>
+                                                                <constraint firstAttribute="width" constant="75" id="UKB-qr-Mij"/>
+                                                                <constraint firstAttribute="width" constant="30" id="Vsr-c0-Ryz"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Report">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Vsr-c0-Ryz"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <connections>
+                                                                <action selector="reportButton:" destination="C01-1i-hEA" eventType="touchUpInside" id="Vwy-Ck-xag"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="183" id="4qN-lw-NSm"/>
+                                                        <constraint firstItem="ej3-vN-oQG" firstAttribute="leading" secondItem="jr7-uE-XB1" secondAttribute="leading" constant="8" id="5wH-ID-ysx"/>
+                                                        <constraint firstAttribute="width" constant="250" id="9aH-Td-8TV"/>
+                                                        <constraint firstItem="2Cb-qM-ON3" firstAttribute="leading" secondItem="Yo0-Z6-Lz8" secondAttribute="trailing" constant="37" id="9hA-0m-Xdq"/>
+                                                        <constraint firstAttribute="height" constant="183" id="DI4-0M-uKr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2Cb-qM-ON3" secondAttribute="trailing" constant="37" id="DNH-IR-nPv"/>
+                                                        <constraint firstItem="ej3-vN-oQG" firstAttribute="top" secondItem="jr7-uE-XB1" secondAttribute="top" constant="8" id="Jaj-zt-ka2"/>
+                                                        <constraint firstItem="Yo0-Z6-Lz8" firstAttribute="leading" secondItem="jr7-uE-XB1" secondAttribute="leading" constant="37" id="XSE-o7-Zwy"/>
+                                                        <constraint firstItem="Yo0-Z6-Lz8" firstAttribute="top" secondItem="ej3-vN-oQG" secondAttribute="bottom" constant="8" id="afN-0w-VdC"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="fkS-UT-RPG"/>
+                                                        <constraint firstItem="2Cb-qM-ON3" firstAttribute="top" secondItem="ej3-vN-oQG" secondAttribute="bottom" constant="8" id="fpG-mn-LIr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ej3-vN-oQG" secondAttribute="trailing" constant="8" id="rAv-xu-TZ7"/>
+                                                        <constraint firstItem="ej3-vN-oQG" firstAttribute="centerX" secondItem="jr7-uE-XB1" secondAttribute="centerX" id="tgU-m7-6x5"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="4qN-lw-NSm"/>
+                                                            <exclude reference="fkS-UT-RPG"/>
+                                                            <exclude reference="9hA-0m-Xdq"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="OL1-Dk-V0e" firstAttribute="leading" secondItem="hoR-4m-AIg" secondAttribute="trailing" constant="18" id="2AX-gP-EW0"/>
@@ -1314,6 +1396,7 @@
                                                 <constraint firstItem="hoR-4m-AIg" firstAttribute="leading" secondItem="RRL-oG-EKJ" secondAttribute="trailing" constant="21" id="dhT-yN-cnF"/>
                                                 <constraint firstAttribute="topMargin" secondItem="s7s-Ue-qVc" secondAttribute="top" id="eDz-q2-tQ9"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bi9-o2-nSf" secondAttribute="trailing" constant="10" id="fbp-6W-020"/>
+                                                <constraint firstItem="jr7-uE-XB1" firstAttribute="top" secondItem="c2o-D8-Giw" secondAttribute="topMargin" constant="39" id="g8u-cA-xeP"/>
                                                 <constraint firstItem="bi9-o2-nSf" firstAttribute="top" secondItem="s7s-Ue-qVc" secondAttribute="bottom" constant="15" id="gge-HF-rrk"/>
                                                 <constraint firstItem="HOF-yt-3op" firstAttribute="baseline" secondItem="o7t-ba-ZGI" secondAttribute="baseline" id="hMQ-Ff-DZG"/>
                                                 <constraint firstItem="s7s-Ue-qVc" firstAttribute="leading" secondItem="Y06-ZZ-2IP" secondAttribute="trailing" constant="153" id="hlu-7P-99p"/>
@@ -1329,6 +1412,7 @@
                                                 <constraint firstItem="abV-l0-fW3" firstAttribute="leading" secondItem="1cH-PZ-3qH" secondAttribute="trailing" constant="23" id="oBj-g1-S0R"/>
                                                 <constraint firstItem="jCd-aL-3R1" firstAttribute="baseline" secondItem="tLd-Ii-Ktr" secondAttribute="baseline" id="osx-uw-JuL"/>
                                                 <constraint firstItem="pfL-3D-Zk6" firstAttribute="centerX" secondItem="OL1-Dk-V0e" secondAttribute="centerX" id="piQ-oq-r52"/>
+                                                <constraint firstItem="jr7-uE-XB1" firstAttribute="centerX" secondItem="c2o-D8-Giw" secondAttribute="centerX" id="ug8-vQ-e1x"/>
                                                 <constraint firstItem="uqB-tH-HwE" firstAttribute="leading" secondItem="c2o-D8-Giw" secondAttribute="leadingMargin" constant="15" id="v9H-mG-0hT"/>
                                                 <constraint firstItem="uqB-tH-HwE" firstAttribute="top" secondItem="bi9-o2-nSf" secondAttribute="bottom" constant="6" id="vXW-Ar-x5R"/>
                                                 <constraint firstItem="RRL-oG-EKJ" firstAttribute="centerY" secondItem="hoR-4m-AIg" secondAttribute="centerY" id="vsl-nK-opM"/>
@@ -1337,12 +1421,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cancelButton" destination="Yo0-Z6-Lz8" id="g4T-Wk-qBR"/>
                                             <outlet property="collectionView" destination="bi9-o2-nSf" id="6ua-fg-EXx"/>
                                             <outlet property="coolCountLabel" destination="HOF-yt-3op" id="N12-jz-v11"/>
                                             <outlet property="dateLabel" destination="s7s-Ue-qVc" id="Mcx-ji-SL6"/>
                                             <outlet property="deadCountLabel" destination="pfL-3D-Zk6" id="MMF-Sz-vRu"/>
+                                            <outlet property="gotitButton" destination="2Cb-qM-ON3" id="B4r-uw-XKJ"/>
                                             <outlet property="indifferentCountLabel" destination="o7t-ba-ZGI" id="uyy-Eq-T3u"/>
                                             <outlet property="loveCountLabel" destination="jCd-aL-3R1" id="XR3-1v-Wgu"/>
+                                            <outlet property="messageLabel" destination="ej3-vN-oQG" id="xlZ-zD-T4e"/>
+                                            <outlet property="modalView" destination="jr7-uE-XB1" id="rFW-v1-ixS"/>
                                             <outlet property="nameLabel" destination="Y06-ZZ-2IP" id="Jes-uk-L3S"/>
                                             <outlet property="winkCountLabel" destination="tLd-Ii-Ktr" id="tq1-SR-k4B"/>
                                         </connections>
@@ -1409,7 +1497,7 @@
         <!--Login View Controller-->
         <scene sceneID="wNm-kF-u3S">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="9gp-eA-XUD" customClass="LoginViewController" customModule="Outfit_Me_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="9gp-eA-XUD" customClass="LoginViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xe-uX-r6a"/>
                         <viewControllerLayoutGuide type="bottom" id="777-Qc-dNc"/>

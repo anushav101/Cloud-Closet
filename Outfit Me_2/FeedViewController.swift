@@ -13,6 +13,11 @@ class FeedViewController: UIViewController {
     
     var storedObjects: [PFObject] = []
     
+    @IBOutlet weak var modalView: UIView!
+    @IBOutlet weak var gotitButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+   
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -20,6 +25,8 @@ class FeedViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         let query = PFQuery(className: "Outfits")
@@ -70,6 +77,25 @@ extension FeedViewController: UITableViewDataSource {
         let object = storedObjects[indexPath.row]
         
 //        let date = object["createdAt"]
+        cell.modalView.hidden = true
+        
+        cell.modalView.backgroundColor = UIColor.whiteColor()
+        cell.modalView.layer.cornerRadius = 15
+        
+        // Customize the button in the modal view
+        cell.gotitButton.layer.cornerRadius = 20
+        cell.gotitButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        cell.gotitButton.backgroundColor = UIColor(colorLiteralRed: 255/255, green: 38/255, blue: 97/255, alpha: 0.75)
+        
+        // Customize the message label on the modal
+        
+        cell.messageLabel.textColor = UIColor.darkGrayColor()
+        cell.messageLabel.text = "Are you sure you want to report this outfit?"
+        
+        cell.cancelButton.layer.cornerRadius = 20
+        cell.cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        cell.cancelButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
+
         
         cell.outfitObject.append(object)
         cell.nameLabel.text = object["user"].username
@@ -108,6 +134,7 @@ extension FeedViewController: UITableViewDataSource {
         
         
         if (object["deadCount"] != nil){
+            
             cell.deadCountLabel.text = "\(object["deadCount"])"
         }
         else {

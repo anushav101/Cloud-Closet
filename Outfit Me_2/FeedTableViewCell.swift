@@ -10,6 +10,9 @@ import UIKit
 import Parse
 
 class FeedTableViewCell: UITableViewCell {
+    
+    
+    
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -24,8 +27,17 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var indifferentCountLabel: UILabel!
     @IBOutlet weak var deadCountLabel: UILabel!
     
+    
+    @IBOutlet weak var modalView: UIView!
+    @IBOutlet weak var gotitButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        
         //        collectionView.dataSource = nil
     }
     
@@ -65,7 +77,7 @@ class FeedTableViewCell: UITableViewCell {
                     if success {
                         print("Object has been saved.")
                         self.loveCountLabel.text = "\(object["loveCount"])"
-                       
+                    
                     }
                     else {
                         print(error)
@@ -206,8 +218,12 @@ class FeedTableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func cancelButton(sender: AnyObject) {
+        self.modalView.hidden = true
+    }
     
-    @IBAction func flagContent(sender: AnyObject) {
+    @IBAction func reportButton(sender: AnyObject) {
+        self.modalView.hidden = true
         
         let object = outfitObject[0]
         let query = PFQuery(className: "Outfits")
@@ -235,6 +251,15 @@ class FeedTableViewCell: UITableViewCell {
             }
             
         }
+        
+    }
+    
+    
+    @IBAction func flagContent(sender: AnyObject) {
+        
+        self.modalView.hidden = false
+        
+     
         
     }
     
