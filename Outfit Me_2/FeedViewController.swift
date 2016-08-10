@@ -74,7 +74,7 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: FeedTableViewCell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedTableViewCell
-        let object = storedObjects[indexPath.row]
+        
         
 //        let date = object["createdAt"]
         cell.modalView.hidden = true
@@ -96,8 +96,8 @@ extension FeedViewController: UITableViewDataSource {
         cell.cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         cell.cancelButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
 
-        
-        cell.outfitObject.append(object)
+        let object = storedObjects[indexPath.row]
+        cell.outfitObject = object
         cell.nameLabel.text = object["user"].username
         cell.dateLabel.text = "goodbye"
         if (object["loveCount"] != nil){

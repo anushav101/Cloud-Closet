@@ -18,7 +18,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var outfitObject: [PFObject] = []
+    var outfitObject: PFObject!
     
     
     @IBOutlet weak var loveCountLabel: UILabel!
@@ -33,187 +33,156 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        
-        //        collectionView.dataSource = nil
-    }
-    
-    
     var collectionImages: [PFFile] = []
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     @IBAction func love(sender: AnyObject) {
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
         print("BUTTON PRESSED!!")
         
-        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["loveCount"] != nil){
-                    let num = object["loveCount"] as! Int
-                    object["loveCount"] = num + 1
-                }
-                else{
-                    object["loveCount"] = 1
-                }
-              
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        self.loveCountLabel.text = "\(object["loveCount"])"
-                    
-                    }
-                    else {
-                        print(error)
-                    }
-                }
+        
+
+        if (object["loveCount"] != nil){
+            let num = object["loveCount"] as! Int
+            object["loveCount"] = num + 1
+        }
+        else{
+            object["loveCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                self.loveCountLabel.text = "\(object["loveCount"])"
+                
             }
-            
+            else {
+                print(error)
+            }
         }
     }
 
     @IBAction func wink(sender: AnyObject) {
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
+        print("BUTTON PRESSED!!")
+        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["winkCount"] != nil){
-                    let num = object["winkCount"] as! Int
-                    object["winkCount"] = num + 1
-                }
-                else{
-                    object["winkCount"] = 1
-                }
+        
+        
+        if (object["winkCount"] != nil){
+            let num = object["winkCount"] as! Int
+            object["winkCount"] = num + 1
+        }
+        else{
+            object["winkCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                self.winkCountLabel.text = "\(object["winkCount"])"
                 
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        self.winkCountLabel.text = "\(object["winkCount"])"
-                        
-                    }
-                    else {
-                        print(error)
-                    }
-                }
             }
-            
+            else {
+                print(error)
+            }
         }
     }
   
     @IBAction func cool(sender: AnyObject) {
         
         
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
+        print("BUTTON PRESSED!!")
+        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["coolCount"] != nil){
-                    let num = object["coolCount"] as! Int
-                    object["coolCount"] = num + 1
-                }
-                else{
-                    object["coolCount"] = 1
-                }
+        
+        
+        if (object["coolCount"] != nil){
+            let num = object["coolCount"] as! Int
+            object["coolCount"] = num + 1
+        }
+        else{
+            object["coolCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                self.coolCountLabel.text = "\(object["coolCount"])"
                 
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        self.coolCountLabel.text = "\(object["coolCount"])"
-                        
-                    }
-                    else {
-                        print(error)
-                    }
-                }
             }
-            
+            else {
+                print(error)
+            }
         }
     }
     
     @IBAction func indifferent(sender: AnyObject) {
         
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
+        print("BUTTON PRESSED!!")
+        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["indifferentCount"] != nil){
-                    let num = object["indifferentCount"] as! Int
-                    object["indifferentCount"] = num + 1
-                }
-                else{
-                    object["indifferentCount"] = 1
-                }
-                
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        self.indifferentCountLabel.text = "\(object["indifferentCount"])"
-                        
-                    }
-                    else {
-                        print(error)
-                    }
-                }
-            }
-            
+        
+        
+        if (object["indifferentCount"] != nil){
+            let num = object["indifferentCount"] as! Int
+            object["indifferentCount"] = num + 1
         }
+        else{
+            object["indifferentCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                self.indifferentCountLabel.text = "\(object["indifferentCount"])"
+                
+            }
+            else {
+                print(error)
+            }
+        }
+            
+    }
 
         
         
-    }
+    
     
     
     
     @IBAction func dead(sender: AnyObject) {
         
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
+        print("BUTTON PRESSED!!")
+        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["deadCount"] != nil){
-                    let num = object["deadCount"] as! Int
-                    object["deadCount"] = num + 1
-                }
-                else{
-                    object["deadCount"] = 1
-                }
+        
+        
+        if (object["deadCount"] != nil){
+            let num = object["deadCount"] as! Int
+            object["deadCount"] = num + 1
+        }
+        else{
+            object["deadCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                self.deadCountLabel.text = "\(object["deadCount"])"
                 
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        self.deadCountLabel.text = "\(object["deadCount"])"
-                        
-                    }
-                    else {
-                        print(error)
-                    }
-                }
             }
-            
+            else {
+                print(error)
+            }
         }
 
     }
@@ -225,31 +194,28 @@ class FeedTableViewCell: UITableViewCell {
     @IBAction func reportButton(sender: AnyObject) {
         self.modalView.hidden = true
         
-        let object = outfitObject[0]
+        let object = outfitObject
         let query = PFQuery(className: "Outfits")
+        print("BUTTON PRESSED!!")
+        
         query.whereKey("objectId", equalTo: (object.objectId)!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects:[PFObject]?, error: NSError?) -> Void in
-            for object in objects! {
-                if (object["flagCount"] != nil){
-                    let num = object["flagCount"] as! Int
-                    object["flagCount"] = num + 1
-                }
-                else{
-                    object["flagCount"] = 1
-                }
-                
-                object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        print("Object has been saved.")
-                        
-                    }
-                    else {
-                        print(error)
-                    }
-                }
+        
+        
+        if (object["flagCount"] != nil){
+            let num = object["flagCount"] as! Int
+            object["flagCount"] = num + 1
+        }
+        else{
+            object["flagCount"] = 1
+        }
+        
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
             }
-            
+            else {
+                print(error)
+            }
         }
         
     }

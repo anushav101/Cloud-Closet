@@ -34,7 +34,9 @@ class ViewController: UIViewController {
     
     @IBAction func deleteClothing(sender: AnyObject) {
         
+        if (objectsToDelete.count != 0){
         self.modalView.hidden = false
+        }
         messageLabel.text = "You are about to delete \(objectsToDelete.count) items."
         
        
