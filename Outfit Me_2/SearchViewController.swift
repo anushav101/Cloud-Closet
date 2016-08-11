@@ -59,8 +59,15 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(sender: AnyObject) {
         let str = searchBar.text!
-        GoogleCustomSearch(str)
-        self.collectionView.reloadData()
+      
+        let aString: String = str
+        let newString = aString.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        print("NEW STRING:")
+        print(newString)
+        
+        GoogleCustomSearch(newString)
+        
+        
         
         
 //        let checkstr = "Z\(str)Z"
