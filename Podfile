@@ -11,6 +11,9 @@ target ‘Cloud Closet’ do
   pod 'ParseFacebookUtilsV4'
   pod 'ParseUI'
   pod 'Alamofire', '~> 3.4'
+  pod 'SwiftyJSON'
+  pod 'AlamofireImage', '~> 2.0'
+  pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
 
  # target ‘Outfit Me_2Tests’ do
   #  inherit! :search_paths

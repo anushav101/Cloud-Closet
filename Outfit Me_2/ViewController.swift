@@ -78,6 +78,17 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func search(sender: AnyObject) {
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("SearchViewController") // again change to your view
+        self.showViewController(vc as! SearchViewController, sender: vc) // change again
+        
+        
+    }
+    
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         

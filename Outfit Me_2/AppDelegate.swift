@@ -9,6 +9,11 @@
 import UIKit
 import Parse
 import Alamofire
+import SwiftyJSON
+import AlamofireImage
+import AlamofireNetworkActivityIndicator
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,8 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             encoding: .JSON,
             headers: ["X-Ios-Bundle-Identifier" : bundleID])
             .responseJSON { (response) in
-                print(response)
+                print("PRINTING OUT RESPONSE:   \(response)")
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        let clothingData = json["items"][0]["image"]["thumbnailLink"].stringValue
+                        print("CLOTHING DATA:  \(clothingData)")
+                    
+                        
+                }
+                
+                case.Failure(let error):
+                    print("PRINTING OUT ERROR: \(error)")
+                
+             print("PRINTING OUT RESPONSE:   \(response)")
         }
+    }
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -50,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         acl.publicReadAccess = true
         PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
         
-        testGoogleCustomSearch()
+//        testGoogleCustomSearch()
         
         //        let product = PFObject(className: "Product")
         //        product["category"] = "test 3"

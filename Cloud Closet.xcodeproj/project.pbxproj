@@ -37,7 +37,9 @@
 		241486261D4C8082005E0E95 /* DressesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486251D4C8082005E0E95 /* DressesOutfitProvider.swift */; };
 		241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */; };
 		2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */; };
+		2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
+		2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455ACB71D5C35E500642A5C /* SearchViewController.swift */; };
 		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
 		24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */; };
 		24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */; };
@@ -82,7 +84,9 @@
 		241486251D4C8082005E0E95 /* DressesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DressesOutfitProvider.swift; sourceTree = "<group>"; };
 		241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoriesDataProvider.swift; sourceTree = "<group>"; };
 		241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesOutfitProvider.swift; sourceTree = "<group>"; };
+		2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
+		2455ACB71D5C35E500642A5C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
 		24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
 		24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
+				2455ACB71D5C35E500642A5C /* SearchViewController.swift */,
+				2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */,
 				24D8A0F31D59714B0004356B /* FeedViewController.swift */,
 				24D8A0F51D597AAE0004356B /* FeedTableViewCell.swift */,
 				24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */,
@@ -347,7 +353,9 @@
 				241486221D4C805B005E0E95 /* BottomsOutfitProvider.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
 				240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */,
+				2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */,
 				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
+				2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */,
 				24B715D11D55109C00D9F3D2 /* LoginViewController.swift in Sources */,
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
