@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class SearchViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UITextField!
    
     @IBOutlet weak var collectionView: UICollectionView!
     var clothingArray: [String] = []
@@ -24,6 +25,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         
 
@@ -54,6 +57,27 @@ class SearchViewController: UIViewController {
     */
     
     
+    @IBAction func search(sender: AnyObject) {
+        let str = searchBar.text!
+        GoogleCustomSearch(str)
+        self.collectionView.reloadData()
+        
+        
+//        let checkstr = "Z\(str)Z"
+//        print("STR VALUE")
+//        print("Z\(str)Z")
+//        print("SEARCH BUTTON PRESSED!")
+//        if (checkstr != "ZZ"||checkstr != "Z Z"||checkstr != "Z  Z"||checkstr != "Z   Z"){
+//            print("SEARCH BAR TEXT!")
+//            print(str)
+//            
+//        }
+//        else {
+//            print("NOTHING TO BE PRINTED")
+//        }
+        
+        
+    }
     
     func GoogleCustomSearch(query: String) {
         let bundleID = "com.makeschool.Outfit"
@@ -69,7 +93,7 @@ class SearchViewController: UIViewController {
         let urlString = "https://www.googleapis.com/customsearch/v1?q=\(q)&key=\(key)&cx=\(cx)&searchType=image"
      
         
-        
+        clothingArray = []
         
         Alamofire.request(.GET,
             urlString,

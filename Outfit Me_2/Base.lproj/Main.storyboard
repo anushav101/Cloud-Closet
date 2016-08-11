@@ -580,22 +580,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-tL-M0n">
                                 <rect key="frame" x="0.0" y="114" width="600" height="402"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u4j-1v-3M5">
-                                    <size key="itemSize" width="112" height="165"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="u4j-1v-3M5">
+                                    <size key="itemSize" width="175" height="175"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="L0l-Jx-p6I" customClass="SearchCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="165"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="112" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-VT-rKU">
-                                                    <rect key="frame" x="10" y="10" width="92" height="145"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-VT-rKU">
+                                                    <rect key="frame" x="10" y="10" width="110" height="110"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -697,8 +697,11 @@
                                         <exclude reference="sPw-eF-ydG"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="search:" destination="83d-72-Kpe" eventType="touchUpInside" id="FNa-WS-Gq2"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search items to add to closet" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAE-lw-fPv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search items to add to closet" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAE-lw-fPv" userLabel="Search Bar">
                                 <rect key="frame" x="7" y="68" width="436" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="257" id="aVx-YA-3TA"/>
@@ -782,6 +785,7 @@
                     <navigationItem key="navigationItem" id="uW9-Wm-53T"/>
                     <connections>
                         <outlet property="collectionView" destination="0cH-tL-M0n" id="snv-6n-2OX"/>
+                        <outlet property="searchBar" destination="oAE-lw-fPv" id="HfV-k2-7wx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUn-Hy-RwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
