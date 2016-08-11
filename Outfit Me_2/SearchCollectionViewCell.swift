@@ -11,4 +11,13 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        self.layer.borderWidth = 0
+    }
+    
+    
 }

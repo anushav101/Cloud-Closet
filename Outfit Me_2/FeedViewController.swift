@@ -143,7 +143,8 @@ extension FeedViewController: UITableViewDataSource {
         
         let date = object.createdAt!
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yy HH:mm"
+        dateFormatter.dateFormat = "MM.dd.yy"
+//        dateFormatter.dateFormat = "MM.dd.yy HH:mm"
         let timeStamp = dateFormatter.stringFromDate(date)
         
         cell.dateLabel.text = timeStamp

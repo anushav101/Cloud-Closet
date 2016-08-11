@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import Alamofire
 import AlamofireImage
 import AlamofireNetworkActivityIndicator
@@ -15,9 +16,19 @@ import SwiftyJSON
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var addButton: UIButton!
    
     @IBOutlet weak var collectionView: UICollectionView!
     var clothingArray: [String] = []
+    var objectsToCloset: [String] = []
+    
+    
+    
+    @IBOutlet weak var modalView: UIView!
+    
+    
+    
+    
     
     override func viewWillAppear(animated: Bool) {
 //        GoogleCustomSearch("black+shirt")
@@ -25,6 +36,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addButton.hidden = true
+        self.modalView.hidden = true
         
         
         
@@ -66,6 +79,9 @@ class SearchViewController: UIViewController {
         print(newString)
         
         GoogleCustomSearch(newString)
+        
+        objectsToCloset = []
+        self.addButton.hidden = true
         
         
         
@@ -133,14 +149,123 @@ class SearchViewController: UIViewController {
                 }
         }
     }
+    
+    
+    func saveURL(category: String, dataProvider: ClothingDataProvider) {
+        
+        for object in objectsToCloset {
+            
+            if let url = NSURL(string: object) {
+                if let data = NSData(contentsOfURL: url) {
+                    let image = UIImage(data: data)
+                    
+                    let imageData = UIImageJPEGRepresentation(image!, 0.8)!
+                    do {
+                        let imageFile = try PFFile(name: "image.jpg", data: imageData, contentType: "image/jpeg")
+                        
+                        let testObject = PFObject(className: "Product")
+                        
+                        // TODO: Make this dynamic (with respect to cell row)
+                        let dataProvider = dataProvider
+                        testObject["category"] = category
+                        testObject["imageFile"] = imageFile
+                        testObject["user"] = PFUser.currentUser()
+                        
+                        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                            if success {
+                                print("Object has been saved.")
+                                dataProvider.getAllClothing({ (success: Bool) in
+                                    dispatch_async(dispatch_get_main_queue(), {
+                                        
+                                        if (object == self.objectsToCloset[self.objectsToCloset.count - 1]){
+                                            
+                                            let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController") // again change to your view
+                                            self.showViewController(vc as! ViewController, sender: vc) // change again
+                                            
+                                        }
+                                        
+                                    })
+                                })
+                                
+                                
+                            }
+                            else {
+                                print(error)
+                            }
+                        }
+                        
+                    } catch {
+                        print("there was an error with image upload")
+                    }
+                    
+                    
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        self.modalView.hidden = true
+    }
+    
+    @IBAction func sendTops(sender: AnyObject) {
+        
+        saveURL("Tops", dataProvider: TopsDataProvider.sharedInstance)
+        
+    }
+    
+    @IBAction func sendBottoms(sender: AnyObject) {
+        
+        saveURL("Bottoms", dataProvider: BottomsDataProvider.sharedInstance)
+        
+    }
+    
+    
+    
+    @IBAction func sendOuterwear(sender: AnyObject) {
+        
+        saveURL("Outerwear", dataProvider: OuterwearDataProvider.sharedInstance)
+    }
+    
+    
+    @IBAction func sendDresses(sender: AnyObject) {
+        
+        saveURL("Dresses", dataProvider: DressesDataProvider.sharedInstance)
+    }
+    
+    
+    @IBAction func sendAccessories(sender: AnyObject) {
+        
+        saveURL("Accessories", dataProvider: AccessoriesDataProvider.sharedInstance)
+        
+    }
+    
+    @IBAction func sendShoes(sender: AnyObject) {
+        
+        saveURL("Shoes", dataProvider: ShoesDataProvider.sharedInstance)
+        
+    }
 
+    @IBAction func addToCloset(sender: AnyObject) {
+        
+        
+        self.modalView.hidden = false
+        
+//        saveURL("Tops", dataProvider: TopsDataProvider.sharedInstance)
+        
+
+        
+    }
 }
 
 
 
 
 
-extension SearchViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.clothingArray.count
@@ -156,14 +281,48 @@ extension SearchViewController: UICollectionViewDataSource {
         }
         
         
+        if objectsToCloset.contains(clothingArray[indexPath.row]){
+            cell.layer.borderWidth = 6.0
+            cell.layer.borderColor = UIColor.darkGrayColor().CGColor
+        }
+        
         
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        if objectsToCloset.contains(clothingArray[indexPath.row]) && (cell!.layer.borderWidth == 6) {
+            cell!.layer.borderWidth = 0
+            var i = -1
+            for object in objectsToCloset {
+                i += 1
+                if self.clothingArray[indexPath.row] == object {
+                    objectsToCloset.removeAtIndex(i)
+                    print("\(indexPath.row) REMOVED")
+                    print(objectsToCloset)
+                }
+                if(objectsToCloset.count == 0) {
+                    self.addButton.hidden = true
+                }
+            }
+            
+        }
+        else {
+            
+            cell!.layer.borderWidth = 6.0
+            cell!.layer.borderColor = UIColor.grayColor().CGColor
+            
+            objectsToCloset.append(self.clothingArray[indexPath.row])
+                self.addButton.hidden = false
+            print("\(indexPath.row) ADDED")
+            print(objectsToCloset)
+        
+        }
     
-    
+    }
 }
-
 
     
 

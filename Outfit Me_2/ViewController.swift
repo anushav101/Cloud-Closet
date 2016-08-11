@@ -336,7 +336,8 @@ extension ViewController: TableViewCellDelegate {
             } catch {
                 print("there was an error with image upload")
             }
-        }    }
+        }
+    }
 }
 
 
