@@ -27,13 +27,19 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var modalView: UIView!
     
     
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
+//    func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
     
     
     override func viewWillAppear(animated: Bool) {
 //        GoogleCustomSearch("black+shirt")
+    }
+    
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func viewDidLoad() {
@@ -42,11 +48,11 @@ class SearchViewController: UIViewController {
         self.modalView.hidden = true
         
         
-        let tap: UITapGestureRecognizer?
-         tap = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
-         view.addGestureRecognizer(tap!)
-        
-        
+//        let tap: UITapGestureRecognizer?
+//         tap = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
+//         view.addGestureRecognizer(tap!)
+//        
+//        
 
         // Do any additional setup after loading the view.
     }
