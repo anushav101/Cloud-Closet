@@ -14,15 +14,17 @@ import SwiftyJSON
 
 class SearchViewController: UIViewController {
     
+   
     @IBOutlet weak var collectionView: UICollectionView!
     var clothingArray: [String] = []
     
     override func viewWillAppear(animated: Bool) {
-        GoogleCustomSearch("black+shirt")
+//        GoogleCustomSearch("black+shirt")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
@@ -33,6 +35,13 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(sender: UIButton) {
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController") // again change to your view
+        self.showViewController(vc as! ViewController, sender: vc) // change again
+        
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -123,6 +132,10 @@ extension SearchViewController: UICollectionViewDataSource {
     
     
 }
+
+
+    
+
 
 
 
