@@ -27,7 +27,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var modalView: UIView!
     
     
-    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     
     override func viewWillAppear(animated: Bool) {
@@ -40,6 +42,9 @@ class SearchViewController: UIViewController {
         self.modalView.hidden = true
         
         
+        let tap: UITapGestureRecognizer?
+         tap = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
+         view.addGestureRecognizer(tap!)
         
         
 
@@ -71,6 +76,9 @@ class SearchViewController: UIViewController {
     
     
     @IBAction func search(sender: AnyObject) {
+       
+        dismissKeyboard()
+        
         let str = searchBar.text!
       
         let aString: String = str
