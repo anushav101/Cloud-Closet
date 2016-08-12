@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+var refresher: UIRefreshControl!
+
 class FeedViewController: UIViewController {
     
     var storedObjects: [PFObject] = []
@@ -24,8 +26,40 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refresher)
     }
     
+    func refresh() {
+        
+        loader()
+        self.tableView.reloadData()
+        refresher.endRefreshing()
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+    
+    
+    func loader(){
+        let query = PFQuery(className: "Outfits")
+        query.whereKey("share", equalTo: "true")
+        query.includeKey("user")
+        query.orderByDescending("date")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.storedObjects = objects ?? []
+            self.tableView.reloadData()
+            
+            
+        }
+    }
     
     
     override func viewWillAppear(animated: Bool) {

@@ -100,27 +100,16 @@ class SearchViewController: UIViewController {
         
         
         
-//        let checkstr = "Z\(str)Z"
-//        print("STR VALUE")
-//        print("Z\(str)Z")
-//        print("SEARCH BUTTON PRESSED!")
-//        if (checkstr != "ZZ"||checkstr != "Z Z"||checkstr != "Z  Z"||checkstr != "Z   Z"){
-//            print("SEARCH BAR TEXT!")
-//            print(str)
-//            
-//        }
-//        else {
-//            print("NOTHING TO BE PRINTED")
-//        }
+
         
         
     }
     
     func GoogleCustomSearch(query: String) {
-        let bundleID = "com.makeschool.Outfit"
+        let bundleID = "com.AnushaVenkatesan.CloudCloset"
         
         let q = query
-        let key = "AIzaSyAjNmmSpUwAjWPq-SLWVnqLvwdEf5zHnmo"
+        let key = "AIzaSyAx4anRH5wE_VbefEN44QtMdCSHpq3cD7k"
         let cx = "017126530825900472415:6gcgyqv_ffg"
         
         
@@ -129,6 +118,8 @@ class SearchViewController: UIViewController {
         
         let urlString = "https://www.googleapis.com/customsearch/v1?q=\(q)&key=\(key)&cx=\(cx)&searchType=image"
      
+        
+        
         
         clothingArray = []
         

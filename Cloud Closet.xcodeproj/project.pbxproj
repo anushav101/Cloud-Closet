@@ -38,6 +38,7 @@
 		241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */; };
 		2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */; };
 		2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */; };
+		2437BC6C1D5CFE7100ACE15B /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
 		2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455ACB71D5C35E500642A5C /* SearchViewController.swift */; };
 		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
@@ -85,6 +86,7 @@
 		241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoriesDataProvider.swift; sourceTree = "<group>"; };
 		241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesOutfitProvider.swift; sourceTree = "<group>"; };
 		2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = ../Pacifico.ttf; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
 		2455ACB71D5C35E500642A5C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		240FCB141D37F67400401405 /* Outfit Me_2 */ = {
 			isa = PBXGroup;
 			children = (
+				2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */,
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
@@ -244,7 +247,7 @@
 				TargetAttributes = {
 					240FCB111D37F67400401405 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6T2RRMSN73;
+						DevelopmentTeam = E369A5RUYT;
 					};
 				};
 			};
@@ -273,6 +276,7 @@
 			files = (
 				240FCB561D396D6600401405 /* kitten.jpg in Resources */,
 				240FCB201D37F67400401405 /* LaunchScreen.storyboard in Resources */,
+				2437BC6C1D5CFE7100ACE15B /* Pacifico.ttf in Resources */,
 				240FCB1D1D37F67400401405 /* Assets.xcassets in Resources */,
 				240FCB1B1D37F67400401405 /* Main.storyboard in Resources */,
 				240FCB541D3969DD00401405 /* puppy .jpg in Resources */,
@@ -486,7 +490,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.Outfit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AnushaVenkatesan.CloudCloset;
 				PRODUCT_NAME = "Cloud Closet";
 				PROVISIONING_PROFILE = "";
 			};
@@ -501,7 +505,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.Outfit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AnushaVenkatesan.CloudCloset;
 				PRODUCT_NAME = "Cloud Closet";
 				PROVISIONING_PROFILE = "";
 			};
