@@ -8,10 +8,10 @@ target ‘Cloud Closet’ do
   pod 'Bond', '4.0.0'
   pod "ConvenienceKit"
   pod 'Parse'
-  pod 'ParseFacebookUtilsV4'
   pod 'ParseUI'
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftyJSON'
+  pod ‘ParseFacebookUtilsV4’
   pod 'AlamofireImage', '~> 2.0'
   pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
 

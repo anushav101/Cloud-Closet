@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     
     @IBAction func deleteClothing(sender: AnyObject) {
         
+        print("BUTTON PRESSED!")
+        
         if (objectsToDelete.count != 0){
         self.modalView.hidden = false
         }

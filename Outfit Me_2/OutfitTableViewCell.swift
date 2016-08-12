@@ -51,6 +51,7 @@ class OutfitTableViewCell: UITableViewCell {
                     }
                     else {
                         object["share"] = "true"
+                        object["date"] = NSDate()
                     }
                     
                 }
