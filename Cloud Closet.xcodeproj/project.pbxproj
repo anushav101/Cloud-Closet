@@ -38,6 +38,10 @@
 		2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */; };
 		2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */; };
 		2437BC6C1D5CFE7100ACE15B /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */; };
+		2437BC6E1D5E4EBF00ACE15B /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */; };
+		2437BC701D5E582500ACE15B /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */; };
+		2437BC721D5E7B9B00ACE15B /* FriendOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */; };
+		2437BC741D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
 		2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455ACB71D5C35E500642A5C /* SearchViewController.swift */; };
 		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
@@ -86,6 +90,10 @@
 		241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesOutfitProvider.swift; sourceTree = "<group>"; };
 		2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = ../Pacifico.ttf; sourceTree = "<group>"; };
+		2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendOutfitViewController.swift; sourceTree = "<group>"; };
+		2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendOutfitBuilderViewController.swift; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
 		2455ACB71D5C35E500642A5C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,10 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
+				2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */,
+				2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */,
+				2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */,
+				2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */,
 				2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */,
 				2455ACB71D5C35E500642A5C /* SearchViewController.swift */,
 				24D8A0F31D59714B0004356B /* FeedViewController.swift */,
@@ -341,6 +353,7 @@
 				24D8A0F81D59A0A20004356B /* FeedCollectionViewCell.swift in Sources */,
 				2414861A1D4C1680005E0E95 /* OutfitBuilderTableViewCell.swift in Sources */,
 				244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */,
+				2437BC741D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift in Sources */,
 				240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */,
 				240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */,
 				24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */,
@@ -354,16 +367,19 @@
 				2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */,
 				241486221D4C805B005E0E95 /* BottomsOutfitProvider.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
+				2437BC701D5E582500ACE15B /* FriendTableViewCell.swift in Sources */,
 				240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */,
 				2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */,
 				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
 				2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */,
 				24B715D11D55109C00D9F3D2 /* LoginViewController.swift in Sources */,
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
+				2437BC6E1D5E4EBF00ACE15B /* FriendViewController.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
 				24B715CD1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift in Sources */,
 				24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */,
 				241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */,
+				2437BC721D5E7B9B00ACE15B /* FriendOutfitViewController.swift in Sources */,
 				24D8A0F41D59714C0004356B /* FeedViewController.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
 				2414861E1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift in Sources */,

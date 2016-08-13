@@ -21,8 +21,9 @@ class ViewController: UIViewController {
     @IBAction func logout(sender: AnyObject) {
         PFUser.logOutInBackground()
         
-        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") // again change to your view
-        self.showViewController(vc as! LoginViewController, sender: vc) // change again
+        
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") // again change to your view
+        UIApplication.sharedApplication().delegate?.window!!.rootViewController = vc
         
     }
     

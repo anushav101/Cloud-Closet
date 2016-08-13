@@ -144,19 +144,22 @@ class LoginViewController: UIViewController {
                 
                 
                 
-                var user = PFUser()
+                let user = PFUser()
                 user.username = usernameField.text
                 user.password = passwordField.text
                 user["firstName"] = firstnameField.text
                 user["lastName"] = lastnameField.text
-                
+                user["public"] = "true"
                 
                 user.signUpInBackgroundWithBlock {
                     (succeeded: Bool, error: NSError?) -> Void in
                     if let error = error {
-                        let errorString = error.userInfo["error"] as? NSString
+                        _ = error.userInfo["error"] as? NSString
                         
                         print("UGH")
+                        let alert = UIAlertController(title: "Sorry", message: "Please pick a different username", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
                     }
                     else {
                         

@@ -12,9 +12,24 @@ class OutfitViewController: UIViewController {
     
     var storedObjects : [PFObject] = []
     
+    @IBOutlet weak var publicButton: UIButton!
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        publicButton.backgroundColor = UIColor.clearColor()
+        publicButton.layer.cornerRadius = 5
+        publicButton.layer.borderWidth = 1
+        publicButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        if(PFUser.currentUser()!["public"] as? String == "true") {
+            self.publicButton.setTitle("Public", forState: .Normal)
+        }
+        else {
+            self.publicButton.setTitle("Private", forState: .Normal)
+        }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -50,6 +65,44 @@ class OutfitViewController: UIViewController {
         
     }
  
+    @IBAction func changePublic(sender: AnyObject) {
+     
+        
+        if(PFUser.currentUser()!["public"] as? String == "true") {
+            
+            
+            let object = PFUser.currentUser()
+            object!["public"] = "false"
+            object!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if success {
+                    print("Object has been saved.")
+                    self.publicButton.setTitle("Private", forState: .Normal)
+                    
+                }
+                else {
+                    print(error)
+                }
+            }
+        
+        }
+        else {
+
+            let object = PFUser.currentUser()
+            object!["public"] = "true"
+            object!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if success {
+                    print("Object has been saved.")
+                    self.publicButton.setTitle("Public", forState: .Normal)
+                    
+                }
+                else {
+                    print(error)
+                }
+            }        }
+
+        
+        
+    }
 
 
 }

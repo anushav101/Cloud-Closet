@@ -30,12 +30,12 @@ class FeedViewController: UIViewController {
         refresher.attributedTitle = NSAttributedString(string: "")
         refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refresher)
+        refresher.tintColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
     }
     
     func refresh() {
         
         loader()
-        self.tableView.reloadData()
         refresher.endRefreshing()
         let triggerTime = (Int64(NSEC_PER_SEC) * 1)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
