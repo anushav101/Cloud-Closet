@@ -31,5 +31,11 @@ class FriendOutfitBuilderViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+   
+    @IBAction func backButton(sender: AnyObject) {
+        
+        performSegueWithIdentifier("toFriendsOutfit", sender: nil)
+        
+    }
 
 }

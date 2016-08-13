@@ -2484,7 +2484,7 @@
         <!--Friend Outfit Builder -->
         <scene sceneID="D0v-9k-B0R">
             <objects>
-                <viewController restorationIdentifier="FriendOutfitBuilderViewController" storyboardIdentifier="FriendOutfitBuilderViewController" title="Friend Outfit Builder " id="aBz-77-0vb" customClass="FriendOutfitBuilderViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendOutfitBuilderViewController" title="Friend Outfit Builder " useStoryboardIdentifierAsRestorationIdentifier="YES" id="aBz-77-0vb" customClass="FriendOutfitBuilderViewController" customModule="Cloud_Closet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KMo-ds-RP9"/>
                         <viewControllerLayoutGuide type="bottom" id="Rbz-FS-8RI"/>
@@ -2516,17 +2516,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Rli-BA-MfR"/>
-                                        <exclude reference="VBP-va-HYh"/>
                                         <exclude reference="0qw-4F-NXv"/>
-                                        <exclude reference="Xvb-vd-Qm5"/>
-                                        <exclude reference="IBp-ID-Bqy"/>
-                                        <exclude reference="sv3-ka-5vT"/>
+                                        <exclude reference="2nN-bY-mSW"/>
                                         <exclude reference="Ds8-pq-43L"/>
                                         <exclude reference="FU4-ue-AQB"/>
-                                        <exclude reference="sWQ-Rl-R1g"/>
-                                        <exclude reference="2nN-bY-mSW"/>
                                         <exclude reference="HXN-Of-Lh3"/>
+                                        <exclude reference="IBp-ID-Bqy"/>
+                                        <exclude reference="Rli-BA-MfR"/>
+                                        <exclude reference="VBP-va-HYh"/>
+                                        <exclude reference="Xvb-vd-Qm5"/>
+                                        <exclude reference="sWQ-Rl-R1g"/>
+                                        <exclude reference="sv3-ka-5vT"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2553,17 +2553,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="upT-m8-2hO"/>
                                         <exclude reference="A0J-Ng-hqt"/>
-                                        <exclude reference="g9L-hz-wuK"/>
-                                        <exclude reference="V6V-55-IPe"/>
-                                        <exclude reference="IFX-z6-WOc"/>
-                                        <exclude reference="XRU-EJ-czB"/>
-                                        <exclude reference="rkl-Si-YmD"/>
                                         <exclude reference="CVE-sM-LAS"/>
                                         <exclude reference="HJq-ol-OAk"/>
-                                        <exclude reference="mCe-cX-COC"/>
+                                        <exclude reference="IFX-z6-WOc"/>
                                         <exclude reference="M5Z-eq-11u"/>
+                                        <exclude reference="V6V-55-IPe"/>
+                                        <exclude reference="XRU-EJ-czB"/>
+                                        <exclude reference="g9L-hz-wuK"/>
+                                        <exclude reference="mCe-cX-COC"/>
+                                        <exclude reference="rkl-Si-YmD"/>
+                                        <exclude reference="upT-m8-2hO"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2582,12 +2582,12 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Mf1-vm-MBd"/>
                                         <exclude reference="El9-wr-ZZT"/>
+                                        <exclude reference="Mf1-vm-MBd"/>
                                         <exclude reference="bm3-07-jjK"/>
-                                        <exclude reference="sE2-tE-m28"/>
-                                        <exclude reference="jwb-ay-pYd"/>
                                         <exclude reference="fwb-oE-wjA"/>
+                                        <exclude reference="jwb-ay-pYd"/>
+                                        <exclude reference="sE2-tE-m28"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -2612,7 +2612,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitCollectionViewCell" id="Qon-wM-hb6" customClass="OutfitBuilderCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitCollectionViewCell" id="Qon-wM-hb6">
                                                             <rect key="frame" x="0.0" y="-0.5" width="183" height="172"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2658,9 +2658,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="aBz-77-0vb" id="ZfU-jL-Hlk"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-BZ-gq2">
                                 <rect key="frame" x="0.0" y="500" width="600" height="51"/>
@@ -2681,6 +2678,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButton:" destination="aBz-77-0vb" eventType="touchUpInside" id="lwI-Wn-S3K"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2714,19 +2714,22 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="eF4-Ef-ybE"/>
-                                <exclude reference="FfE-Yu-b3w"/>
-                                <exclude reference="oN8-70-B34"/>
-                                <exclude reference="Tx8-9F-Mu6"/>
                                 <exclude reference="4Qs-fZ-pfd"/>
+                                <exclude reference="FfE-Yu-b3w"/>
+                                <exclude reference="Tx8-9F-Mu6"/>
                                 <exclude reference="hZc-MP-fDs"/>
+                                <exclude reference="oN8-70-B34"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Uco-Mu-0Jf"/>
+                    <connections>
+                        <segue destination="xiH-mg-ron" kind="push" identifier="toFriendsOutfit" id="4lR-1u-j8V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypO-x3-s8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-1243"/>
+            <point key="canvasLocation" x="718" y="-1243"/>
         </scene>
         <!--Friend Outfits-->
         <scene sceneID="PKa-5L-ESf">
@@ -2762,17 +2765,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="YM2-hZ-cht"/>
-                                        <exclude reference="lVe-ha-8th"/>
-                                        <exclude reference="aZ7-lU-E0E"/>
                                         <exclude reference="0hI-hV-Ck2"/>
-                                        <exclude reference="Xoz-sw-91C"/>
-                                        <exclude reference="pBs-my-3jW"/>
                                         <exclude reference="2Ha-dr-z0l"/>
-                                        <exclude reference="or2-YJ-BoA"/>
                                         <exclude reference="AEN-Gj-BFR"/>
-                                        <exclude reference="lyE-sj-BEk"/>
+                                        <exclude reference="Xoz-sw-91C"/>
+                                        <exclude reference="YM2-hZ-cht"/>
                                         <exclude reference="aCr-di-ypA"/>
+                                        <exclude reference="aZ7-lU-E0E"/>
+                                        <exclude reference="lVe-ha-8th"/>
+                                        <exclude reference="lyE-sj-BEk"/>
+                                        <exclude reference="or2-YJ-BoA"/>
+                                        <exclude reference="pBs-my-3jW"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2798,17 +2801,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6g7-He-qgc"/>
-                                        <exclude reference="hGf-D5-XrD"/>
-                                        <exclude reference="P1R-Wq-iz7"/>
-                                        <exclude reference="8tE-W8-bYE"/>
-                                        <exclude reference="XWq-Ti-cLG"/>
-                                        <exclude reference="Io2-tD-NRF"/>
                                         <exclude reference="1EE-Co-SBc"/>
-                                        <exclude reference="aQ2-JD-zcf"/>
-                                        <exclude reference="6ec-wh-DlN"/>
                                         <exclude reference="3WU-36-8hK"/>
+                                        <exclude reference="6ec-wh-DlN"/>
+                                        <exclude reference="6g7-He-qgc"/>
                                         <exclude reference="8ZH-Pd-iSW"/>
+                                        <exclude reference="8tE-W8-bYE"/>
+                                        <exclude reference="Io2-tD-NRF"/>
+                                        <exclude reference="P1R-Wq-iz7"/>
+                                        <exclude reference="XWq-Ti-cLG"/>
+                                        <exclude reference="aQ2-JD-zcf"/>
+                                        <exclude reference="hGf-D5-XrD"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2902,10 +2905,10 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="782-pB-02r"/>
-                                                    <exclude reference="jPd-QE-P3r"/>
-                                                    <exclude reference="uog-l6-TBC"/>
                                                     <exclude reference="FM3-sV-JpB"/>
                                                     <exclude reference="f0H-X5-hW0"/>
+                                                    <exclude reference="jPd-QE-P3r"/>
+                                                    <exclude reference="uog-l6-TBC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2933,6 +2936,9 @@
                                         <exclude reference="LAI-fz-hS7"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addOutfit:" destination="xiH-mg-ron" eventType="touchUpInside" id="mgg-Mk-ChK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Outfits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s4-Vu-a22">
                                 <rect key="frame" x="20" y="135" width="75" height="31"/>
@@ -3027,6 +3033,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="QeA-Z1-qec"/>
+                    <connections>
+                        <segue destination="aBz-77-0vb" kind="push" identifier="toFOB" id="yk3-xz-LY1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RI8-HR-6Jp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3071,4 +3080,7 @@
         <image name="verify-sign" width="24" height="24"/>
         <image name="wink" width="296" height="296"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4lR-1u-j8V"/>
+    </inferredMetricsTieBreakers>
 </document>

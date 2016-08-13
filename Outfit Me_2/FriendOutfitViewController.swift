@@ -30,6 +30,15 @@ class FriendOutfitViewController: UIViewController {
     }
     
 
+    @IBAction func addOutfit(sender: AnyObject) {
+        
+//        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("FriendOutfitBuilderViewController") // again change to your view
+//        self.navigationController?.pushViewController(vc as! FriendOutfitBuilderViewController, animated: true)
+//        
+        performSegueWithIdentifier("toFOB", sender: nil)
+        
+        
+    }
     /*
     // MARK: - Navigation
 
