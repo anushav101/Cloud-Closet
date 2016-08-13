@@ -17,6 +17,7 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
         
         
     }
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +27,7 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     }
     
     override func viewWillAppear(animated: Bool) {
+        storedObjects = []
         let query = PFQuery(className: "Outfits")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in

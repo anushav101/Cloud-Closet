@@ -13,7 +13,7 @@ class OutfitViewController: UIViewController {
     var storedObjects : [PFObject] = []
     
     @IBOutlet weak var publicButton: UIButton!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,9 +33,8 @@ class OutfitViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        storedObjects = []
         let query = PFQuery(className: "Outfits")
-        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
@@ -48,38 +47,40 @@ class OutfitViewController: UIViewController {
                         self.storedObjects.append(object)
                     }
                 }
-                
-                if (object["createdFor"] != nil) {
-                    if(object["createdFor"] as! String == PFUser.currentUser()?.objectId!){
-                        self.storedObjects.append(object)
+                else{
+                    if (object["createdFor"] != nil) {
+                        if(object["createdFor"] as? String == PFUser.currentUser()!.objectId){
+                            self.storedObjects.append(object)
+                        }
                     }
                 }
+                
+                
             }
-//            self.storedObjects = objects ?? []
             self.tableView.reloadData()
             
-
+            
         }
     }
-
-
-   
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     @IBAction func addOutfit(sender: AnyObject) {
         
         let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitBuilderViewController") // again change to your view
         self.navigationController?.pushViewController(vc as! OutfitBuilderViewController, animated: true)
         
     }
- 
+    
     @IBAction func changePublic(sender: AnyObject) {
-     
+        
         
         if(PFUser.currentUser()!["public"] as? String == "true") {
             
@@ -96,10 +97,10 @@ class OutfitViewController: UIViewController {
                     print(error)
                 }
             }
-        
+            
         }
         else {
-
+            
             let object = PFUser.currentUser()
             object!["public"] = "true"
             object!.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -112,12 +113,12 @@ class OutfitViewController: UIViewController {
                     print(error)
                 }
             }        }
-
+        
         
         
     }
-
-
+    
+    
 }
 
 
@@ -125,7 +126,7 @@ extension OutfitViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storedObjects.count
-
+        
     }
     
     
@@ -135,23 +136,53 @@ extension OutfitViewController: UITableViewDataSource {
         let object = storedObjects[indexPath.row]
         cell.checkMark.hidden = true
         if (object["share"] != nil) {
-           if (object["share"] as! String == "true"){
+            if (object["share"] as! String == "true"){
                 cell.checkMark.hidden = false
             }
         }
         if (object["images"] != nil){
-        cell.collectionImages = object["images"] as! [PFFile]
+            cell.collectionImages = object["images"] as! [PFFile]
         }
         cell.outfitObject.append(object)
         cell.tableIndexPath = indexPath.row
         cell.collectionView.reloadData()
         cell.outfitNumber.text = "Outfit # \(storedObjects.count - indexPath.row )"
         
+        
+        if(object["createdFor"] != nil){
+            let query : PFQuery = PFUser.query()!
+            query.whereKey("objectId", equalTo: object["createdBy"])
+            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                for item in objects! {
+                    
+                    let str1 = "created by: "
+                    let str2 = item["username"] as? String
+                    cell.byLabel.text = str1 + str2!
+
+                }
+                
+            }
+            
+            
+           
+        }
+        else {
+            cell.byLabel.text = " "
+            
+        }
+        
+        
+        
         return cell
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-       
+        
         if editingStyle == .Delete {
             
             print("NOTE DELETED !!!!!!!")
@@ -159,13 +190,13 @@ extension OutfitViewController: UITableViewDataSource {
             let query = PFQuery(className: "Outfits")
             let object = storedObjects[indexPath.row]
             storedObjects.removeAtIndex(indexPath.row)
-//            self.tableView.reloadData()
+            //            self.tableView.reloadData()
             query.whereKey("objectId", equalTo: object.objectId!)
-        
+            
             query.findObjectsInBackgroundWithBlock {
                 (objects: [PFObject]?, error: NSError?) -> Void in
                 for item in objects! {
-//                    item.deleteEventually()
+                    //                    item.deleteEventually()
                     item.deleteInBackgroundWithBlock({(success: Bool, error: NSError?)-> Void in
                         if (success) {
                             
@@ -174,7 +205,7 @@ extension OutfitViewController: UITableViewDataSource {
                             dispatch_async(dispatch_get_main_queue()) {
                                 self.tableView.reloadData()
                             }
-
+                            
                         }
                         else {
                             print("CANNOT DELETE")
@@ -182,7 +213,7 @@ extension OutfitViewController: UITableViewDataSource {
                     })
                     
                 }
-//                self.tableView.reloadData()
+                //                self.tableView.reloadData()
             }
         }
         
@@ -192,17 +223,17 @@ extension OutfitViewController: UITableViewDataSource {
         
     }
     
-//        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
-//            
-//            self.tableView.reloadData()
-//            
-//        })
-//        
-//        
-//        
-//    }
-
+    //        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+    //            
+    //            self.tableView.reloadData()
+    //            
+    //        })
+    //        
+    //        
+    //        
+    //    }
+    
 }
 
 

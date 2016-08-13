@@ -31,7 +31,7 @@ class FOBTableViewCell: UITableViewCell {
 
 }
 
-extension FOBTableViewCell: UICollectionViewDataSource {
+extension FOBTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.collectionObjects.count
@@ -45,8 +45,49 @@ extension FOBTableViewCell: UICollectionViewDataSource {
         let object = collectionObjects[indexPath.row]
         let image = object
         cell.setTheImageView(image)
+        
+        if objectsToFriend.contains(object){
+            cell.layer.borderWidth = 6.0
+            cell.layer.borderColor = UIColor.cyanColor().CGColor
+        }
+        
         return cell
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        
+        if objectsToFriend.contains(collectionObjects[indexPath.row]) && (cell!.layer.borderWidth == 6) {
+            cell!.layer.borderWidth = 0
+            var i = -1
+            for object in objectsToFriend {
+                i += 1
+                if self.collectionObjects[indexPath.row] == object {
+                    objectsToFriend.removeAtIndex(i)
+                    print("OBJECTSTOFRIEND")
+                    print(objectsToFriend)
+                }
+            }
+            
+        }
+        else {
+            
+            cell!.layer.borderWidth = 6.0
+            //        cell!.layer.borderColor = UIColor.grayColor().CGColor
+            cell!.layer.borderColor = UIColor.cyanColor().CGColor
+            objectsToFriend.append(self.collectionObjects[indexPath.row])
+            print("OBJECTSTOFRIEND")
+            print(objectsToFriend)
+            //            print(objectsToOutfit)
+            //            print("THIS IS COLLECTION VIEW INDEX!")
+            //            print(indexPath.row)
+        }
+        
+    }
+    
 }
 
 

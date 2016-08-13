@@ -6,6 +6,8 @@
 import UIKit
 import Parse
 
+var objectsToFriend: [PFObject] = []
+
 class FriendOutfitBuilderViewController: UIViewController {
     
     var userInformation: String?
@@ -18,26 +20,63 @@ class FriendOutfitBuilderViewController: UIViewController {
     var shoesArray: [PFObject] = []
     
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("FRIEND OUTFIT BUILDER VIEW CONTROLLER")
         print(userInformation)
         self.tableView.dataSource = self
-
-       
+        
+        
     }
     
     
+    @IBAction func createOutfit(sender: AnyObject) {
+        
+        
+        let testObject = PFObject(className: "Outfits")
+        testObject.ACL?.publicWriteAccess = true
+        testObject["user"] = PFUser.currentUser()
+        testObject["createdFor"] = self.userInformation
+        testObject["createdBy"]  = PFUser.currentUser()!.objectId
+        for outfits in objectsToFriend {
+            let outfitImage = outfits["imageFile"]
+            testObject.addObject(outfitImage, forKey: "images")
+            
+            
+        }
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                
+                
+                
+                
+                self.performSegueWithIdentifier("toFriendsOutfit", sender: nil)
+                    
+                objectsToFriend = []
+                self.tableView.reloadData()
+                
+                
+                
+                
+                //segue to outfits
+            }
+            else {
+                print(error)
+            }
+        }
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
         
         let query = PFQuery(className: "Product")
-//        query.whereKey("category", equalTo: "Tops")
+        //        query.whereKey("category", equalTo: "Tops")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
@@ -45,8 +84,8 @@ class FriendOutfitBuilderViewController: UIViewController {
                 return
             }
             for object in objects! {
-
-            
+                
+                
                 if (object["user"].objectId == self.userInformation!) {
                     if(object["category"] as! String == "Tops"){
                         self.topsArray.append(object)
@@ -66,7 +105,7 @@ class FriendOutfitBuilderViewController: UIViewController {
                     if(object["category"] as! String == "Shoes"){
                         self.shoesArray.append(object)
                     }
-              
+                    
                 }
                 
             }
@@ -79,18 +118,18 @@ class FriendOutfitBuilderViewController: UIViewController {
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-
-
-   
+    
+    
+    
     @IBAction func backButton(sender: AnyObject) {
         
-        performSegueWithIdentifier("toFriendsOutfit", sender: nil)
+        self.performSegueWithIdentifier("toFriendsOutfit", sender: nil)
         
     }
     
@@ -103,8 +142,15 @@ class FriendOutfitBuilderViewController: UIViewController {
             destinationVC.userInformation = userInformation
             
         }
+        
+        //        CtoFO
+        
+        
+        
+        
+        
     }
-
+    
 }
 
 extension FriendOutfitBuilderViewController: UITableViewDataSource {
@@ -143,7 +189,7 @@ extension FriendOutfitBuilderViewController: UITableViewDataSource {
         return cell
     }
     
-
+    
     
     
 }

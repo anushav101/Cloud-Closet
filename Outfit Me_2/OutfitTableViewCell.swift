@@ -13,6 +13,7 @@ class OutfitTableViewCell: UITableViewCell {
 
     @IBOutlet weak var outfitNumber: UILabel!
     
+    @IBOutlet weak var byLabel: UILabel!
     
     var collectionImages: [PFFile] = []
     var outfitObject : [PFObject] = []
