@@ -2830,7 +2830,7 @@
                                 <rect key="frame" x="0.0" y="174" width="600" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendOutfitCategory" rowHeight="180" id="1kl-BI-6FA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendOutfitCategory" rowHeight="180" id="1kl-BI-6FA" customClass="FriendOutfitTableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1kl-BI-6FA" id="b79-zh-fT4">
@@ -2847,7 +2847,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutfitArticle" id="JFI-Cw-yBe">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendOutfitPicture" id="JFI-Cw-yBe" customClass="FriendOutfitCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="129"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2866,8 +2866,14 @@
                                                                 <constraint firstAttribute="trailingMargin" secondItem="UvK-06-NVr" secondAttribute="trailing" constant="-8" id="Un5-dr-b0f"/>
                                                                 <constraint firstItem="UvK-06-NVr" firstAttribute="top" secondItem="JFI-Cw-yBe" secondAttribute="topMargin" constant="-8" id="pav-w6-jvK"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="UvK-06-NVr" id="0RG-ln-ZYv"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="1kl-BI-6FA" id="srB-Fh-5Eq"/>
+                                                    </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outfit # " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J47-4g-fnm">
                                                     <rect key="frame" x="22" y="8" width="115" height="31"/>
@@ -2903,6 +2909,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Tcm-YB-g8R" id="poh-Qr-2aP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

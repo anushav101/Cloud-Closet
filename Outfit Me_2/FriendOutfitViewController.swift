@@ -84,9 +84,23 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let cell: FriendOutfitTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath) as! FriendOutfitTableViewCell
         
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath)
+        
+//        let cell: FriendOutfitTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitTableViewCell", forIndexPath: indexPath) as! FriendOutfitTableViewCell
+        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath)
+        
+        
+       
+        
+        
+        let object = storedObjects[indexPath.row]
+        if (object["images"] != nil){
+            cell.collectionImages = object["images"] as! [PFFile]
+        }
+        cell.collectionView.reloadData()
         
         return cell
     }

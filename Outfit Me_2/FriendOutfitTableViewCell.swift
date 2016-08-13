@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class FriendOutfitTableViewCell: UITableViewCell {
 
+   
+    
+    var collectionImages: [PFFile] = []
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +28,46 @@ class FriendOutfitTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+  
 
 }
+
+//extension FriendOutfitTableViewCell: UICollectionViewDataSource {
+//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier( "FriendOutfitPicture", forIndexPath: indexPath)
+////        let image = collectionImages[indexPath.row]
+////        cell.setTheImageView(image)
+//        return cell
+//    }
+//}
+
+
+extension FriendOutfitTableViewCell: UICollectionViewDataSource {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.collectionImages.count
+    }
+    
+    
+    
+        func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier( "FriendOutfitPicture", forIndexPath: indexPath) as! FriendOutfitCollectionViewCell
+            let image = collectionImages[indexPath.row]
+            cell.setTheImageView(image)
+            return cell
+        }
+}
+
+    
+    
+    
+
+
+
+
+
