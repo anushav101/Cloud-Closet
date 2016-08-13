@@ -123,6 +123,10 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
   
     @IBAction func createOutfit(sender: AnyObject) {
         
+        if(objectsToOutfit.count == 0){
+            return
+        }
+        
         
         let testObject = PFObject(className: "Outfits")
         testObject.ACL?.publicWriteAccess = true

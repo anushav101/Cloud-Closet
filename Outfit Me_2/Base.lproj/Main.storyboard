@@ -1669,6 +1669,61 @@
                                     <outlet property="delegate" destination="94j-wD-PbN" id="toB-RC-Z8d"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-t8-f0l" userLabel="Modal View">
+                                <rect key="frame" x="179" y="209" width="242" height="183"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This user is private " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-4Z-rnI">
+                                        <rect key="frame" x="-4" y="8" width="243" height="105"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpA-nH-MWK">
+                                        <rect key="frame" x="82" y="121" width="79" height="40"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="CRK-x3-9xn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79" id="rFM-qK-We4"/>
+                                            <constraint firstAttribute="width" constant="30" id="wIF-V3-KJo"/>
+                                            <constraint firstAttribute="height" constant="40" id="wMk-14-CFs"/>
+                                        </constraints>
+                                        <state key="normal" title="Okay">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CRK-x3-9xn"/>
+                                                <exclude reference="rFM-qK-We4"/>
+                                                <exclude reference="wIF-V3-KJo"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="cancelPressed:" destination="XSh-bo-Xie" eventType="touchUpInside" id="TnF-Yc-49A"/>
+                                            <action selector="okayButtonPressed:" destination="94j-wD-PbN" eventType="touchUpInside" id="vUP-hG-SMr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jpA-nH-MWK" firstAttribute="centerX" secondItem="BFd-t8-f0l" secondAttribute="centerX" id="87Q-nG-7ZA"/>
+                                    <constraint firstAttribute="bottom" secondItem="jpA-nH-MWK" secondAttribute="bottom" constant="22" id="Bba-yK-bSJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="F4r-4Z-rnI" secondAttribute="trailing" constant="3" id="Kla-nZ-9gc"/>
+                                    <constraint firstAttribute="height" constant="183" id="O3s-Nq-kkI"/>
+                                    <constraint firstItem="jpA-nH-MWK" firstAttribute="top" secondItem="F4r-4Z-rnI" secondAttribute="bottom" constant="8" symbolic="YES" id="S2k-vb-fza"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="TjY-0U-L5t"/>
+                                    <constraint firstItem="F4r-4Z-rnI" firstAttribute="leading" secondItem="BFd-t8-f0l" secondAttribute="leading" constant="-4" id="VM3-K2-gVD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="183" id="aof-YB-foe"/>
+                                    <constraint firstItem="F4r-4Z-rnI" firstAttribute="top" secondItem="BFd-t8-f0l" secondAttribute="topMargin" id="axL-GQ-BzA"/>
+                                    <constraint firstAttribute="width" constant="242" id="kcY-CF-Gko"/>
+                                    <constraint firstItem="jpA-nH-MWK" firstAttribute="leading" secondItem="BFd-t8-f0l" secondAttribute="leading" constant="82" id="zzV-El-u3m"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TjY-0U-L5t"/>
+                                        <exclude reference="aof-YB-foe"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1677,12 +1732,16 @@
                             <constraint firstItem="vGi-uU-hwb" firstAttribute="leading" secondItem="J89-4H-Mzd" secondAttribute="leadingMargin" constant="-20" id="Dz8-UA-Imm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bbQ-37-cbw" secondAttribute="trailing" constant="-20" id="K1x-7L-dOL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vGi-uU-hwb" secondAttribute="trailing" constant="-20" id="YqG-6G-wt6"/>
+                            <constraint firstItem="BFd-t8-f0l" firstAttribute="centerY" secondItem="J89-4H-Mzd" secondAttribute="centerY" id="bUr-Ag-hPc"/>
                             <constraint firstItem="va1-Ni-5Wx" firstAttribute="top" secondItem="vGi-uU-hwb" secondAttribute="bottom" id="hgd-hF-RXM"/>
                             <constraint firstItem="bbQ-37-cbw" firstAttribute="top" secondItem="Se4-XC-xTP" secondAttribute="bottom" constant="10" id="ouf-BM-2VL"/>
+                            <constraint firstItem="BFd-t8-f0l" firstAttribute="centerX" secondItem="J89-4H-Mzd" secondAttribute="centerX" id="y8M-Yz-Drj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dUw-OV-upO"/>
                     <connections>
+                        <outlet property="modalView" destination="BFd-t8-f0l" id="tP8-mr-K8E"/>
+                        <outlet property="okayButton" destination="jpA-nH-MWK" id="hs2-vj-PM2"/>
                         <outlet property="tableView" destination="vGi-uU-hwb" id="q4l-es-UfK"/>
                         <segue destination="xiH-mg-ron" kind="push" identifier="toOF" id="6Yc-Y7-H4f"/>
                     </connections>

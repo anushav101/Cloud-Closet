@@ -37,6 +37,10 @@ class FriendOutfitBuilderViewController: UIViewController {
     
     @IBAction func createOutfit(sender: AnyObject) {
         
+        if(objectsToFriend.count == 0){
+            return
+        }
+        
         
         let testObject = PFObject(className: "Outfits")
         testObject.ACL?.publicWriteAccess = true

@@ -11,21 +11,34 @@
     
     class FriendViewController: UIViewController {
         
+        @IBOutlet weak var modalView: UIView!
+        @IBOutlet weak var okayButton: UIButton!
         var storedObjects: [PFObject] = []
         //    var userInformation: PFObject?
         var userInformation: String?
         
-        
+      
         
         @IBOutlet weak var tableView: UITableView!
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            self.modalView.hidden = true
             
-            // Do any additional setup after loading the view.
+            modalView.backgroundColor = UIColor.whiteColor()
+            modalView.layer.cornerRadius = 15
+            okayButton.layer.cornerRadius = 20
+            modalView.layer.borderWidth = 6
+            modalView.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+            okayButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            okayButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
+            
             
         }
         
+        @IBAction func okayButtonPressed(sender: AnyObject) {
+            self.modalView.hidden = true
+        }
         
         override func viewWillAppear(animated: Bool) {
             let query : PFQuery = PFUser.query()!
@@ -119,6 +132,7 @@
                 }
                 else {
                     print("USER PRIVATE")
+                    self.modalView.hidden = false
                 }
             }
             
