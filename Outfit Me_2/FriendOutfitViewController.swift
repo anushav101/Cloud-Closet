@@ -14,10 +14,10 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
         print("FRIEND OUTFIT VIEW CONTROLLER")
         print(userInformation)
         self.tableView.dataSource = self
-
+        
         
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func didReceiveMemoryWarning() {
@@ -39,8 +39,15 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
                         self.storedObjects.append(object)
                     }
                 }
+                
+                if (object["createdFor"] != nil) {
+                    if(object["createdFor"] as! String == self.userInformation!){
+                        self.storedObjects.append(object)
+                    }
+                }
             }
-            print(self.storedObjects)
+            
+            
             self.tableView.reloadData()
             
             
@@ -54,17 +61,17 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
         
     }
     
-
+    
     @IBAction func addOutfit(sender: AnyObject) {
         
-//        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("FriendOutfitBuilderViewController") // again change to your view
-//        self.navigationController?.pushViewController(vc as! FriendOutfitBuilderViewController, animated: true)
-//        
+        //        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("FriendOutfitBuilderViewController") // again change to your view
+        //        self.navigationController?.pushViewController(vc as! FriendOutfitBuilderViewController, animated: true)
+        //
         performSegueWithIdentifier("toFOB", sender: nil)
         
         
     }
- 
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if(segue.identifier == "toFOB") {
@@ -88,23 +95,25 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
         
         
         
-//        let cell: FriendOutfitTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitTableViewCell", forIndexPath: indexPath) as! FriendOutfitTableViewCell
+        //        let cell: FriendOutfitTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitTableViewCell", forIndexPath: indexPath) as! FriendOutfitTableViewCell
         
-//        let cell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath)
+        //        let cell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath)
         
         
-       
+        
         
         
         let object = storedObjects[indexPath.row]
         if (object["images"] != nil){
             cell.collectionImages = object["images"] as! [PFFile]
         }
+        cell.numberLabel.text = "Outfit # \(storedObjects.count - indexPath.row )"
+
         cell.collectionView.reloadData()
         
         return cell
     }
-
+    
 }
 
 

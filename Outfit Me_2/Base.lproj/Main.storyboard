@@ -2596,7 +2596,7 @@
                                 <rect key="frame" x="0.0" y="172" width="600" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="192" id="ovc-7u-ltM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FOBCategory" rowHeight="192" id="ovc-7u-ltM" customClass="FOBTableViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ovc-7u-ltM" id="yha-Cf-AHy">
@@ -2613,7 +2613,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Qon-wM-hb6">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FOBuilderCell" id="Qon-wM-hb6" customClass="FOBCollectionViewCell" customModule="Cloud_Closet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="-0.5" width="183" height="172"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2633,10 +2633,13 @@
                                                                 <constraint firstItem="paT-30-zvb" firstAttribute="trailing" secondItem="Qon-wM-hb6" secondAttribute="trailingMargin" constant="-5" id="y9E-HI-l1n"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="imageView" destination="paT-30-zvb" id="XRa-wd-2XR"/>
+                                                                <outlet property="imageView" destination="paT-30-zvb" id="MPq-C1-cRi"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="ovc-7u-ltM" id="ML5-Ll-bqi"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -2654,6 +2657,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="YYA-dq-jgR" id="mKF-OO-2bQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2722,6 +2728,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uco-Mu-0Jf"/>
                     <connections>
+                        <outlet property="tableView" destination="Uw2-m8-SJJ" id="V2q-hB-fQ8"/>
                         <segue destination="xiH-mg-ron" kind="push" identifier="toFriendsOutfit" id="4lR-1u-j8V"/>
                     </connections>
                 </viewController>
@@ -2911,6 +2918,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="Tcm-YB-g8R" id="poh-Qr-2aP"/>
+                                            <outlet property="numberLabel" destination="J47-4g-fnm" id="TUq-Gy-bHY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2918,8 +2926,8 @@
                                     <outlet property="dataSource" destination="xiH-mg-ron" id="axX-yp-2vh"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-bm-sS4">
-                                <rect key="frame" x="504" y="117" width="76" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-bm-sS4">
+                                <rect key="frame" x="532" y="120" width="48" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="FfC-0f-fId"/>
                                     <constraint firstAttribute="height" constant="50" id="LAI-fz-hS7"/>
@@ -2999,7 +3007,7 @@
                             <constraint firstItem="6EW-bV-VoB" firstAttribute="top" secondItem="FDU-dx-htC" secondAttribute="bottom" constant="-1" id="pMG-bw-1jk"/>
                             <constraint firstItem="tqv-v2-aW5" firstAttribute="trailing" secondItem="FDU-dx-htC" secondAttribute="trailing" id="rN1-rY-9uq"/>
                             <constraint firstItem="tqv-v2-aW5" firstAttribute="leading" secondItem="FDU-dx-htC" secondAttribute="leading" id="t7V-RU-HHW"/>
-                            <constraint firstItem="ajM-bm-sS4" firstAttribute="top" secondItem="FDU-dx-htC" secondAttribute="bottom" constant="47" id="tf6-1f-uCy"/>
+                            <constraint firstItem="ajM-bm-sS4" firstAttribute="top" secondItem="FDU-dx-htC" secondAttribute="bottom" constant="50" id="tf6-1f-uCy"/>
                             <constraint firstItem="tqv-v2-aW5" firstAttribute="top" secondItem="2s4-Vu-a22" secondAttribute="bottom" constant="8" id="uuu-Ct-vNc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FDU-dx-htC" secondAttribute="trailing" constant="-20" id="w4f-uh-6C7"/>
                             <constraint firstItem="ajM-bm-sS4" firstAttribute="top" secondItem="2s4-Vu-a22" secondAttribute="bottom" constant="-31" id="wn5-00-918"/>

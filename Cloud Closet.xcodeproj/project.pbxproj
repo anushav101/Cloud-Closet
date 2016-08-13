@@ -36,6 +36,8 @@
 		241486261D4C8082005E0E95 /* DressesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486251D4C8082005E0E95 /* DressesOutfitProvider.swift */; };
 		241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */; };
 		2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */; };
+		2431959F1D5F272E0018DAF7 /* FOBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431959E1D5F272E0018DAF7 /* FOBTableViewCell.swift */; };
+		243195A11D5F290D0018DAF7 /* FOBCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243195A01D5F290D0018DAF7 /* FOBCollectionViewCell.swift */; };
 		2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */; };
 		2437BC6C1D5CFE7100ACE15B /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */; };
 		2437BC6E1D5E4EBF00ACE15B /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */; };
@@ -90,6 +92,8 @@
 		241486251D4C8082005E0E95 /* DressesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DressesOutfitProvider.swift; sourceTree = "<group>"; };
 		241486271D4C8096005E0E95 /* AccessoriesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoriesDataProvider.swift; sourceTree = "<group>"; };
 		241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesOutfitProvider.swift; sourceTree = "<group>"; };
+		2431959E1D5F272E0018DAF7 /* FOBTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOBTableViewCell.swift; sourceTree = "<group>"; };
+		243195A01D5F290D0018DAF7 /* FOBCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOBCollectionViewCell.swift; sourceTree = "<group>"; };
 		2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		2437BC6B1D5CFDC200ACE15B /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = ../Pacifico.ttf; sourceTree = "<group>"; };
 		2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -152,11 +156,13 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
+				2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */,
+				2431959E1D5F272E0018DAF7 /* FOBTableViewCell.swift */,
+				243195A01D5F290D0018DAF7 /* FOBCollectionViewCell.swift */,
 				2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */,
 				2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */,
 				2437BC751D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift */,
 				2437BC791D5F032200ACE15B /* FriendOutfitCollectionViewCell.swift */,
-				2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */,
 				2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */,
 				2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */,
 				2455ACB71D5C35E500642A5C /* SearchViewController.swift */,
@@ -375,6 +381,7 @@
 				241486221D4C805B005E0E95 /* BottomsOutfitProvider.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
 				2437BC701D5E582500ACE15B /* FriendTableViewCell.swift in Sources */,
+				243195A11D5F290D0018DAF7 /* FOBCollectionViewCell.swift in Sources */,
 				240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */,
 				2437BC691D5C5DAC00ACE15B /* SearchCollectionViewCell.swift in Sources */,
 				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
@@ -393,6 +400,7 @@
 				24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */,
 				2437BC7A1D5F032200ACE15B /* FriendOutfitCollectionViewCell.swift in Sources */,
 				241486261D4C8082005E0E95 /* DressesOutfitProvider.swift in Sources */,
+				2431959F1D5F272E0018DAF7 /* FOBTableViewCell.swift in Sources */,
 				241486241D4C806E005E0E95 /* OuterwearDataProvider.swift in Sources */,
 				240FCB5D1D399E2600401405 /* BottomsDataSource.swift in Sources */,
 			);

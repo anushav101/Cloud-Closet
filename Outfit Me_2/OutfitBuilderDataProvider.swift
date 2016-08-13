@@ -31,7 +31,7 @@ class OutfitBuilderDataProvider: NSObject {
     
     func getAllClothing(success: (Bool) -> Void) {
         let query = PFQuery(className: "Product")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         query.whereKey("category", equalTo: category)
         query.whereKey("user", equalTo: PFUser.currentUser()!)
         
@@ -40,6 +40,8 @@ class OutfitBuilderDataProvider: NSObject {
                 print(error.localizedDescription)
                 return
             }
+            
+           
             
             self.storedObjects = objects ?? []
             
@@ -58,11 +60,11 @@ extension OutfitBuilderDataProvider: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("OutfitCollectionViewCell", forIndexPath: indexPath) as! OutfitBuilderCollectionViewCell
-       
         cell.setTheImageView(storedObjects[indexPath.row])
         
-
+        
         
         if objectsToOutfit.contains(storedObjects[indexPath.row]){
             cell.layer.borderWidth = 6.0
@@ -71,6 +73,11 @@ extension OutfitBuilderDataProvider: UICollectionViewDataSource, UICollectionVie
         
         return cell
     }
+    
+    
+    
+    
+    
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

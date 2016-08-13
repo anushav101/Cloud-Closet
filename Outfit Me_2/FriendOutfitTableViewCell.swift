@@ -15,6 +15,7 @@ class FriendOutfitTableViewCell: UITableViewCell {
     
     var collectionImages: [PFFile] = []
     
+    @IBOutlet weak var numberLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     

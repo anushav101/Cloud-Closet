@@ -24,6 +24,7 @@ class OutfitBuilderViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         TopsOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
                 dispatch_async(dispatch_get_main_queue(), {

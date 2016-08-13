@@ -42,7 +42,20 @@ class OutfitViewController: UIViewController {
                 print(error.localizedDescription)
                 return
             }
-            self.storedObjects = objects ?? []
+            for object in objects! {
+                if (object["user"].objectId  == PFUser.currentUser()?.objectId!){
+                    if(object["createdBy"] as! String  == "user"){
+                        self.storedObjects.append(object)
+                    }
+                }
+                
+                if (object["createdFor"] != nil) {
+                    if(object["createdFor"] as! String == PFUser.currentUser()?.objectId!){
+                        self.storedObjects.append(object)
+                    }
+                }
+            }
+//            self.storedObjects = objects ?? []
             self.tableView.reloadData()
             
 
