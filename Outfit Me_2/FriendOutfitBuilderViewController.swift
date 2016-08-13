@@ -9,9 +9,13 @@
 import UIKit
 
 class FriendOutfitBuilderViewController: UIViewController {
+    
+    var userInformation: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("FRIEND OUTFIT BUILDER VIEW CONTROLLER")
+        print(userInformation)
 
         // Do any additional setup after loading the view.
     }
@@ -36,6 +40,17 @@ class FriendOutfitBuilderViewController: UIViewController {
         
         performSegueWithIdentifier("toFriendsOutfit", sender: nil)
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if(segue.identifier == "toFriendsOutfit") {
+            
+            let destinationVC = segue.destinationViewController as! FriendOutfitViewController
+            destinationVC.userInformation = userInformation
+            
+        }
     }
 
 }

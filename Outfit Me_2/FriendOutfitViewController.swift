@@ -1,25 +1,25 @@
 //
 //  FriendOutfitViewController.swift
 //  Cloud Closet
-//
-//  Created by Anusha Venkatesan on 8/12/16.
-//  Copyright © 2016 MakeSchool. All rights reserved.
-//
 
 import UIKit
 import Parse
 
 class FriendOutfitViewController: UIViewController {
-
+    
+    var userInformation: String?
+    var storedObjects: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("FRIEND OUTFIT VIEW CONTROLLER")
+        print(userInformation)
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func backButton(sender: AnyObject) {
@@ -39,14 +39,15 @@ class FriendOutfitViewController: UIViewController {
         
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+ 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if(segue.identifier == "toFOB") {
+            
+            let destinationVC = segue.destinationViewController as! FriendOutfitBuilderViewController
+            destinationVC.userInformation = userInformation
+            
+        }
     }
-    */
 
 }

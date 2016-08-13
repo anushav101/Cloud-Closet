@@ -86,7 +86,7 @@ class ViewController: UIViewController {
         let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("SearchViewController") // again change to your view
         self.showViewController(vc as! SearchViewController, sender: vc) // change again
         
-        
+//        self.performSegueWithIdentifier("zoom", sender: self)
     }
     
     

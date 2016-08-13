@@ -599,11 +599,12 @@
                         <outlet property="messageLabel" destination="jEx-1d-rnU" id="8Q9-gd-yAv"/>
                         <outlet property="modalView" destination="jHY-M9-qYc" id="fpt-Ib-ypd"/>
                         <outlet property="tableView" destination="g8A-6A-lab" id="J5o-Vj-w8n"/>
+                        <segue destination="83d-72-Kpe" kind="show" identifier="zoom" id="Mo3-VO-7rH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFB-Oe-56c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1702" y="723"/>
+            <point key="canvasLocation" x="1879" y="733"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="FHl-7C-atf">
@@ -617,7 +618,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-tL-M0n">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-tL-M0n">
                                 <rect key="frame" x="0.0" y="112" width="600" height="419"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="u4j-1v-3M5">
@@ -2591,7 +2592,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FriendOutfitBuilder" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="192" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-m8-SJJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="FriendOutfitBuilder" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="192" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-m8-SJJ">
                                 <rect key="frame" x="0.0" y="172" width="600" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2659,7 +2660,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-BZ-gq2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-BZ-gq2">
                                 <rect key="frame" x="0.0" y="500" width="600" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Kvy-6D-u7o"/>
@@ -2828,7 +2829,7 @@
                                     <action selector="backButton:" destination="xiH-mg-ron" eventType="touchUpInside" id="7Bj-WJ-lel"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tqv-v2-aW5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tqv-v2-aW5">
                                 <rect key="frame" x="0.0" y="174" width="600" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2971,6 +2972,7 @@
                             <constraint firstItem="ajM-bm-sS4" firstAttribute="trailing" secondItem="d6q-iJ-Myc" secondAttribute="trailingMargin" id="1dC-6B-wi2"/>
                             <constraint firstItem="FDU-dx-htC" firstAttribute="leading" secondItem="d6q-iJ-Myc" secondAttribute="leadingMargin" constant="-20" id="4zt-BT-xD1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FDU-dx-htC" secondAttribute="trailing" constant="-20" id="7Pe-3T-khi"/>
+                            <constraint firstItem="tqv-v2-aW5" firstAttribute="top" secondItem="2s4-Vu-a22" secondAttribute="bottom" constant="8" symbolic="YES" id="Bgl-Gn-bDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6EW-bV-VoB" secondAttribute="trailing" constant="-20" id="Blh-ge-q3f"/>
                             <constraint firstItem="ajM-bm-sS4" firstAttribute="top" secondItem="6EW-bV-VoB" secondAttribute="bottom" constant="-10" id="CHo-LD-gxs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ajM-bm-sS4" secondAttribute="trailing" id="Dj5-VB-fS4"/>
@@ -3017,6 +3019,7 @@
                                 <exclude reference="GAX-Xl-gcl"/>
                                 <exclude reference="GvQ-ls-x6X"/>
                                 <exclude reference="Owb-2x-eUJ"/>
+                                <exclude reference="Xxy-ED-ggZ"/>
                                 <exclude reference="bha-XT-Vkz"/>
                                 <exclude reference="uuu-Ct-vNc"/>
                                 <exclude reference="xij-bb-8Vy"/>
@@ -3081,6 +3084,6 @@
         <image name="wink" width="296" height="296"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4lR-1u-j8V"/>
+        <segue reference="6Yc-Y7-H4f"/>
     </inferredMetricsTieBreakers>
 </document>
