@@ -95,6 +95,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+
+        
         TopsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
                 dispatch_async(dispatch_get_main_queue(), {

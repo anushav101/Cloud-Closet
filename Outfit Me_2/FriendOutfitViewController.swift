@@ -5,7 +5,7 @@
 import UIKit
 import Parse
 
-class FriendOutfitViewController: UIViewController {
+class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     
     var userInformation: String?
     var storedObjects: [PFObject] = []
@@ -13,13 +13,38 @@ class FriendOutfitViewController: UIViewController {
         super.viewDidLoad()
         print("FRIEND OUTFIT VIEW CONTROLLER")
         print(userInformation)
+        self.tableView.dataSource = self
 
         
     }
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let query = PFQuery(className: "Outfits")
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            for object in objects! {
+                if (object["user"].objectId  == self.userInformation!){
+                    if(object["createdBy"] as! String  == "user"){
+                        self.storedObjects.append(object)
+                    }
+                }
+            }
+            print(self.storedObjects)
+            self.tableView.reloadData()
+            
+            
+        }
     }
     
     @IBAction func backButton(sender: AnyObject) {
@@ -49,5 +74,29 @@ class FriendOutfitViewController: UIViewController {
             
         }
     }
+    
+    
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return self.storedObjects.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("FriendOutfitCategory", forIndexPath: indexPath)
+        
+        return cell
+    }
 
 }
+
+
+
+
+
+
+
+

@@ -126,6 +126,7 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
         let testObject = PFObject(className: "Outfits")
         testObject.ACL?.publicWriteAccess = true
         testObject["user"] = PFUser.currentUser()
+        testObject["createdBy"]  = "user"
         for outfits in objectsToOutfit {
             let outfitImage = outfits["imageFile"]
             testObject.addObject(outfitImage, forKey: "images")

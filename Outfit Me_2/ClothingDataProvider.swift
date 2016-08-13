@@ -11,6 +11,7 @@ import Parse
 
 var objectsToDelete: [PFObject] = []
 
+
 class ClothingDataProvider : NSObject{
     
     
@@ -26,8 +27,9 @@ class ClothingDataProvider : NSObject{
     
     func getAllClothing(success: (Bool) -> Void) {
         let query = PFQuery(className: "Product")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         query.whereKey("category", equalTo: category)
+//        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.whereKey("user", equalTo: PFUser.currentUser()!)
         
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in

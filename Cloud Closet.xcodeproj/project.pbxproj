@@ -42,6 +42,7 @@
 		2437BC701D5E582500ACE15B /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */; };
 		2437BC721D5E7B9B00ACE15B /* FriendOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */; };
 		2437BC741D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */; };
+		2437BC761D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BC751D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
 		2455ACB81D5C35E500642A5C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455ACB71D5C35E500642A5C /* SearchViewController.swift */; };
 		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
@@ -94,6 +95,7 @@
 		2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendOutfitViewController.swift; sourceTree = "<group>"; };
 		2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendOutfitBuilderViewController.swift; sourceTree = "<group>"; };
+		2437BC751D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendOutfitTableViewCell.swift; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
 		2455ACB71D5C35E500642A5C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				240FCB571D39886600401405 /* Data providers */,
 				2437BC6D1D5E4EBF00ACE15B /* FriendViewController.swift */,
 				2437BC711D5E7B9B00ACE15B /* FriendOutfitViewController.swift */,
+				2437BC751D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift */,
 				2437BC731D5E7BB400ACE15B /* FriendOutfitBuilderViewController.swift */,
 				2437BC6F1D5E582500ACE15B /* FriendTableViewCell.swift */,
 				2437BC681D5C5DAC00ACE15B /* SearchCollectionViewCell.swift */,
@@ -364,6 +367,7 @@
 				240FCB6B1D3D74E400401405 /* PhotoTakingHelper.swift in Sources */,
 				241486201D4C8048005E0E95 /* TopsOutfitProvider.swift in Sources */,
 				2414861C1D4C268B005E0E95 /* OutfitBuilderDataProvider.swift in Sources */,
+				2437BC761D5EE99F00ACE15B /* FriendOutfitTableViewCell.swift in Sources */,
 				2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */,
 				241486221D4C805B005E0E95 /* BottomsOutfitProvider.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
