@@ -11,9 +11,11 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     var storedObjects: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = .None
         print("FRIEND OUTFIT VIEW CONTROLLER")
         print(userInformation)
         self.tableView.dataSource = self
+        self.navigationItem.setHidesBackButton(true, animated: false)
         
         
     }
@@ -28,6 +30,7 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     
     override func viewWillAppear(animated: Bool) {
         storedObjects = []
+        self.edgesForExtendedLayout = .None
         let query = PFQuery(className: "Outfits")
         query.whereKey("createdFor", equalTo: self.userInformation!)
         query.orderByDescending("createdAt")

@@ -26,7 +26,13 @@ class FriendOutfitBuilderViewController: UIViewController {
     
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
+        
+//        self.edgesForExtendedLayout = .None
+//        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.navigationController?.navigationBarHidden = true
+        
         print("FRIEND OUTFIT BUILDER VIEW CONTROLLER")
         print(userInformation)
         self.tableView.dataSource = self
@@ -78,6 +84,8 @@ class FriendOutfitBuilderViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        self.edgesForExtendedLayout = .None
         
         let query = PFQuery(className: "Product")
         query.whereKey("user", equalTo: self.userInformation!)

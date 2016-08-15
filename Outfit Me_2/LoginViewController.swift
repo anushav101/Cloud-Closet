@@ -50,6 +50,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
         
         // Do any additional setup after loading the view.\
         
@@ -270,8 +272,8 @@ class LoginViewController: UIViewController {
                 if let error = error {
                     _ = error.userInfo["error"] as? NSString
                     
-                    print("UGH")
-                    let alert = UIAlertController(title: "", message: "Unverified Email", preferredStyle: UIAlertControllerStyle.Alert)
+                    print(error)
+                    let alert = UIAlertController(title: "Oops!", message: "There was an error, email unverified or username taken", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }

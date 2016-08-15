@@ -3,7 +3,7 @@
     //  Cloud Closet
     //
     //  Created by Anusha Venkatesan on 8/12/16.
-   
+    
     
     import UIKit
     import Parse
@@ -13,14 +13,27 @@
         @IBOutlet weak var modalView: UIView!
         @IBOutlet weak var okayButton: UIButton!
         var storedObjects: [PFObject] = []
+        var searchedObjects: [PFObject] = []
         //    var userInformation: PFObject?
-//        var userInformation: String?
+        //        var userInformation: String?
         var userInformation: PFUser?
-     
+        
+      
+        
+        let searchController = UISearchController(searchResultsController: nil)
         
         @IBOutlet weak var tableView: UITableView!
         override func viewDidLoad() {
             super.viewDidLoad()
+//            self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+
+            self.navigationItem.setHidesBackButton(true, animated: false)
+            self.edgesForExtendedLayout = .None
+            
+            searchController.searchResultsUpdater = self
+            searchController.dimsBackgroundDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView = searchController.searchBar
             
             self.modalView.hidden = true
             
@@ -67,6 +80,16 @@
             
         }
         
+        
+        func filterContentForSearchText(searchText: String, scope: String = "All") {
+            searchedObjects = storedObjects.filter { candy in
+                let user = candy["username"] as? String
+                return user!.lowercaseString.containsString(searchText.lowercaseString)
+            }
+            
+            tableView.reloadData()
+        }
+        
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
@@ -91,14 +114,24 @@
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
+            if searchController.active && searchController.searchBar.text != "" {
+                return searchedObjects.count
+            }
+            
             return self.storedObjects.count
         }
         
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell: FriendTableViewCell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as!FriendTableViewCell
             
-            let user = self.storedObjects[indexPath.row]
+            var user: PFObject
+            if searchController.active && searchController.searchBar.text != "" {
+                user = searchedObjects[indexPath.row]
+            }
+            else{
             
+                user = self.storedObjects[indexPath.row]
+            }
             cell.label.text = user["username"] as? String
             
             
@@ -115,7 +148,14 @@
             
             //        tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
-            let user = self.storedObjects[indexPath.row]
+            
+            let user: PFObject
+            if searchController.active && searchController.searchBar.text != "" {
+                user = searchedObjects[indexPath.row]
+            } else {
+                user = self.storedObjects[indexPath.row]
+            }
+//            let user = self.storedObjects[indexPath.row]
             let currentuser = PFUser.currentUser()
             if(user["username"] as? String == currentuser?.username){
                 print("CURRENT USER")
@@ -126,7 +166,7 @@
                 if(user["public"] as? String == "true"){
                     
                     print("USER PUBLIC")
-//                    userInformation = user.objectId
+                    //                    userInformation = user.objectId
                     userInformation = user as! PFUser
                     performSegueWithIdentifier("toOF", sender: nil)
                     
@@ -152,6 +192,11 @@
             }
         }
         
+    }
+    extension FriendViewController: UISearchResultsUpdating {
+        func updateSearchResultsForSearchController(searchController: UISearchController) {
+            filterContentForSearchText(searchController.searchBar.text!)
+        }
     }
     
     
