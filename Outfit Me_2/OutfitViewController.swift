@@ -35,29 +35,23 @@ class OutfitViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         storedObjects = []
         let query = PFQuery(className: "Outfits")
+        query.whereKey("createdFor", equalTo: PFUser.currentUser()!)
+        query.includeKey("createdBy")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            for object in objects! {
-                if (object["user"].objectId  == PFUser.currentUser()?.objectId!){
-                    if(object["createdBy"] as! String  == "user"){
-                        self.storedObjects.append(object)
-                    }
-                }
-                else{
-                    if (object["createdFor"] != nil) {
-                        if(object["createdFor"] as? String == PFUser.currentUser()!.objectId){
-                            self.storedObjects.append(object)
-                        }
-                    }
-                }
-                
-                
-            }
-            self.tableView.reloadData()
+            
+            self.storedObjects = objects!
+            
+            dispatch_async(dispatch_get_main_queue(), {
+              
+                self.tableView.reloadData()
+            })
+            
+            
             
             
         }
@@ -149,27 +143,27 @@ extension OutfitViewController: UITableViewDataSource {
         cell.outfitNumber.text = "Outfit # \(storedObjects.count - indexPath.row )"
         
         
-        if(object["createdFor"] != nil){
-            let query : PFQuery = PFUser.query()!
-            query.whereKey("objectId", equalTo: object["createdBy"])
-            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                
-                for item in objects! {
-                    
-                    let str1 = "created by: "
-                    let str2 = item["username"] as? String
-                    cell.byLabel.text = str1 + str2!
-
-                }
-                
-            }
-            
-            
-           
+        if(object["createdBy"] != nil){
+//            let query : PFQuery = PFUser.query()!
+//            let str = object["createdFor"].objectId
+//            query.whereKey("objectId", equalTo: str)
+//            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//                
+//                for item in objects! {
+//                    
+//                    let str1 = "created by: "
+//                    let str2 = item["username"] as? String
+//                    cell.byLabel.text = str1 + str2!
+//
+//                }
+//            cell.byLabel.text = object["createdBy"].username
+            let username = object["createdBy"].username!
+            let str = "by: "
+            cell.byLabel.text =  str + username!
         }
         else {
             cell.byLabel.text = " "

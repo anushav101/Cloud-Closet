@@ -7,7 +7,7 @@ import Parse
 
 class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     
-    var userInformation: String?
+    var userInformation: PFUser?
     var storedObjects: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,28 +29,19 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     override func viewWillAppear(animated: Bool) {
         storedObjects = []
         let query = PFQuery(className: "Outfits")
+        query.whereKey("createdFor", equalTo: self.userInformation!)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            for object in objects! {
-                if (object["user"].objectId  == self.userInformation!){
-                    if(object["createdBy"] as! String  == "user"){
-                        self.storedObjects.append(object)
-                    }
-                }
-                
-                if (object["createdFor"] != nil) {
-                    if(object["createdFor"] as! String == self.userInformation!){
-                        self.storedObjects.append(object)
-                    }
-                }
-            }
             
+            self.storedObjects = objects!
             
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
             
             
         }

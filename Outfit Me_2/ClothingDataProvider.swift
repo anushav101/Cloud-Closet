@@ -17,7 +17,7 @@ class ClothingDataProvider : NSObject{
     
     var storedObjects: [PFObject] = [] {
         didSet {
-            print("did set storedObjects: \(storedObjects)")
+//            print("did set storedObjects: \(storedObjects)")
         }
     }
     

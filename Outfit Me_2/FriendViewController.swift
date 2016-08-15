@@ -15,9 +15,9 @@
         @IBOutlet weak var okayButton: UIButton!
         var storedObjects: [PFObject] = []
         //    var userInformation: PFObject?
-        var userInformation: String?
-        
-      
+//        var userInformation: String?
+        var userInformation: PFUser?
+     
         
         @IBOutlet weak var tableView: UITableView!
         override func viewDidLoad() {
@@ -42,6 +42,7 @@
         
         override func viewWillAppear(animated: Bool) {
             let query : PFQuery = PFUser.query()!
+            query.orderByAscending("username")
             //        query.orderByDescending("date")
             query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
                 if let error = error {
@@ -126,7 +127,8 @@
                 if(user["public"] as? String == "true"){
                     
                     print("USER PUBLIC")
-                    userInformation = user.objectId
+//                    userInformation = user.objectId
+                    userInformation = user as! PFUser
                     performSegueWithIdentifier("toOF", sender: nil)
                     
                 }

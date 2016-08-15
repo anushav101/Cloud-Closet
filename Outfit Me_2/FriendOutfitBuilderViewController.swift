@@ -10,7 +10,7 @@ var objectsToFriend: [PFObject] = []
 
 class FriendOutfitBuilderViewController: UIViewController {
     
-    var userInformation: String?
+    var userInformation: PFUser?
     
     var topsArray: [PFObject] = []
     var bottomsArray: [PFObject] = []
@@ -46,7 +46,7 @@ class FriendOutfitBuilderViewController: UIViewController {
         testObject.ACL?.publicWriteAccess = true
         testObject["user"] = PFUser.currentUser()
         testObject["createdFor"] = self.userInformation
-        testObject["createdBy"]  = PFUser.currentUser()!.objectId
+        testObject["createdBy"]  = PFUser.currentUser()
         for outfits in objectsToFriend {
             let outfitImage = outfits["imageFile"]
             testObject.addObject(outfitImage, forKey: "images")
@@ -80,6 +80,7 @@ class FriendOutfitBuilderViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         let query = PFQuery(className: "Product")
+        query.whereKey("user", equalTo: self.userInformation!)
         //        query.whereKey("category", equalTo: "Tops")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
@@ -90,7 +91,7 @@ class FriendOutfitBuilderViewController: UIViewController {
             for object in objects! {
                 
                 
-                if (object["user"].objectId == self.userInformation!) {
+//                if (object["user"].objectId == self.userInformation!) {
                     if(object["category"] as! String == "Tops"){
                         self.topsArray.append(object)
                     }
@@ -110,15 +111,20 @@ class FriendOutfitBuilderViewController: UIViewController {
                         self.shoesArray.append(object)
                     }
                     
-                }
+//                }
                 
             }
-            print("PRINTING OUT TOPS!")
-            print(self.topsArray)
-            self.tableView.reloadData()
+            
+        self.tableView.reloadData()
             
             
         }
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            print("PRINTING OUT DRESSES!")
+            print(self.dressesArray)
+            self.tableView.reloadData()
+        })
         
         
     }
