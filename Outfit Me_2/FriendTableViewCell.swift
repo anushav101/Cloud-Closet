@@ -3,8 +3,7 @@
 //  Cloud Closet
 //
 //  Created by Anusha Venkatesan on 8/12/16.
-//  Copyright © 2016 MakeSchool. All rights reserved.
-//
+
 
 import UIKit
 
