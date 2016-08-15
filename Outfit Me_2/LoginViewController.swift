@@ -50,7 +50,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setHidesBackButton(true, animated: false)
+//        self.navigationItem.setHidesBackButton(true, animated: false)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         
         // Do any additional setup after loading the view.\

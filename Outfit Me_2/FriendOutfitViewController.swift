@@ -11,6 +11,18 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
     var storedObjects: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.modalView.hidden = true
+        
+        modalView.backgroundColor = UIColor.whiteColor()
+        modalView.layer.cornerRadius = 15
+        
+        modalView.layer.borderWidth = 6
+        modalView.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+        
+        
+        
         self.edgesForExtendedLayout = .None
         print("FRIEND OUTFIT VIEW CONTROLLER")
         print(userInformation)
@@ -19,6 +31,8 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
         
         
     }
+    @IBOutlet weak var modalView: UIView!
+   
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -44,6 +58,12 @@ class FriendOutfitViewController: UIViewController, UITableViewDataSource  {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                if (objects!.count == 0) {
+                    self.modalView.hidden = false
+                }
+                else{
+                    print("SOMETHING HERE")
+                }
             })
             
             

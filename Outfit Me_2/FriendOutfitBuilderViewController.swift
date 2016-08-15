@@ -19,6 +19,8 @@ class FriendOutfitBuilderViewController: UIViewController {
     var accessoriesArray: [PFObject] = []
     var shoesArray: [PFObject] = []
     
+    @IBOutlet weak var modalView: UIView!
+    
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +30,14 @@ class FriendOutfitBuilderViewController: UIViewController {
     override func viewDidLoad() {
     
         super.viewDidLoad()
+        
+        self.modalView.hidden = true
+        
+        modalView.backgroundColor = UIColor.whiteColor()
+        modalView.layer.cornerRadius = 15
+        modalView.layer.borderWidth = 6
+        modalView.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+       
         
 //        self.edgesForExtendedLayout = .None
 //        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
@@ -89,17 +99,19 @@ class FriendOutfitBuilderViewController: UIViewController {
         
         let query = PFQuery(className: "Product")
         query.whereKey("user", equalTo: self.userInformation!)
-        //        query.whereKey("category", equalTo: "Tops")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
+            
+            if (objects!.count == 0) {
+                self.modalView.hidden = false
+            }
+            
             for object in objects! {
                 
-                
-//                if (object["user"].objectId == self.userInformation!) {
                     if(object["category"] as! String == "Tops"){
                         self.topsArray.append(object)
                     }
@@ -118,8 +130,6 @@ class FriendOutfitBuilderViewController: UIViewController {
                     if(object["category"] as! String == "Shoes"){
                         self.shoesArray.append(object)
                     }
-                    
-//                }
                 
             }
             
@@ -132,6 +142,7 @@ class FriendOutfitBuilderViewController: UIViewController {
             print("PRINTING OUT DRESSES!")
             print(self.dressesArray)
             self.tableView.reloadData()
+
         })
         
         
