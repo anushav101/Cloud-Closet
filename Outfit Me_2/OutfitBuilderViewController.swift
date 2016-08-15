@@ -13,11 +13,42 @@ class OutfitBuilderViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var categoryOutfitProvider = [TopsOutfitProvider.sharedInstance, BottomsOutfitProvider.sharedInstance, OuterwearOutfitProvider.sharedInstance, DressesOutfitProvider.sharedInstance, AccessoriesOutfitProvider.sharedInstance, ShoesOutfitProvider.sharedInstance]
 
-
+    @IBOutlet weak var okayButton: UIButton!
+    @IBOutlet weak var modalView: UIView!
+    
+    @IBAction func okayButtonPressed(sender: AnyObject) {
+        
+        self.modalView.hidden = true
+    }
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.modalView.hidden = true
+        modalView.backgroundColor = UIColor.whiteColor()
+        modalView.layer.cornerRadius = 15
+        okayButton.layer.cornerRadius = 20
+        modalView.layer.borderWidth = 6
+        modalView.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+        okayButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        okayButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
+        
+        
+        let query = PFQuery(className: "Product")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if objects?.count == 0 {
+                self.modalView.hidden = false
+            }
+            
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {

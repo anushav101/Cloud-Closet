@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var categoryDataProvider = [TopsDataProvider.sharedInstance, BottomsDataProvider.sharedInstance, OuterwearDataProvider.sharedInstance, DressesDataProvider.sharedInstance, AccessoriesDataProvider.sharedInstance, ShoesDataProvider.sharedInstance]
     
     
+    @IBOutlet weak var modalView2: UIView!
+    @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var gotitButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
@@ -37,25 +39,35 @@ class ViewController: UIViewController {
         print("BUTTON PRESSED!")
         
         if (objectsToDelete.count != 0){
-        self.modalView.hidden = false
+            self.modalView.hidden = false
         }
         messageLabel.text = "You are about to delete \(objectsToDelete.count) items."
         
-       
+        
         
         
         
     }
-
+    
     @IBOutlet weak var logOut: UIButton!
     
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.modalView.hidden = true
+        self.modalView2.hidden = true
         self.logOut.layer.zPosition = 5
+        
+        
+        modalView2.backgroundColor = UIColor.whiteColor()
+        modalView2.layer.cornerRadius = 15
+        okayButton.layer.cornerRadius = 20
+        modalView2.layer.borderWidth = 6
+        modalView2.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+        okayButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        okayButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
         
         
         // Customize the modal view container
@@ -74,10 +86,23 @@ class ViewController: UIViewController {
         cancelButton.layer.cornerRadius = 20
         cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         cancelButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
-        let parsePhoto = ParsePhotos()
+        //        let parsePhoto = ParsePhotos()
         // Do any additional setup after loading the view, typically from a nib.
         
         
+        
+        
+        let query = PFQuery(className: "Product")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if (objects!.count == 0){
+                self.modalView2.hidden = false
+            }
+        }
     }
     
     @IBAction func search(sender: AnyObject) {
@@ -85,7 +110,7 @@ class ViewController: UIViewController {
         let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("SearchViewController") // again change to your view
         self.showViewController(vc as! SearchViewController, sender: vc) // change again
         
-//        self.performSegueWithIdentifier("zoom", sender: self)
+        //        self.performSegueWithIdentifier("zoom", sender: self)
     }
     
     
@@ -94,7 +119,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-
+        
         
         TopsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
@@ -103,10 +128,10 @@ class ViewController: UIViewController {
                 })
             }
         }
-
+        
         BottomsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
-                dispatch_async(dispatch_get_main_queue(), { 
+                dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                 })
             }
@@ -143,12 +168,12 @@ class ViewController: UIViewController {
                 })
             }
         }
-
-
-
-
+        
+        
+        
+        
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -157,7 +182,7 @@ class ViewController: UIViewController {
     
     
     
-
+    
     
     // When the button on modal is pressed:
     @IBAction func buttonPressed(sender: UIButton) {
@@ -238,6 +263,10 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func okayButtonPressed(sender: AnyObject) {
+        
+        self.modalView2.hidden = true
+    }
     
     
     @IBAction func cancelPressed(sender: AnyObject) {
@@ -261,8 +290,8 @@ class ViewController: UIViewController {
     
     
     
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDataSource{
@@ -278,27 +307,27 @@ extension ViewController: UITableViewDataSource{
         let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("Categories", forIndexPath: indexPath) as! TableViewCell
         cell.delegate = self
         cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        cell.titleLabel.text = categoryDataProvider[indexPath.row].category     
+        cell.titleLabel.text = categoryDataProvider[indexPath.row].category
         cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         cell.collectionView.delegate = categoryDataProvider[indexPath.row]
         return cell
-
+        
         
     }
     
-//    override func tableView(tableView: UITableView,
-//                            willDisplayCell cell: UITableViewCell,
-//                                            forRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        guard let tableViewCell = cell as? TableViewCell else { return }
-//        
-//        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
-//    }
+    //    override func tableView(tableView: UITableView,
+    //                            willDisplayCell cell: UITableViewCell,
+    //                                            forRowAtIndexPath indexPath: NSIndexPath) {
+    //
+    //        guard let tableViewCell = cell as? TableViewCell else { return }
+    //
+    //        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+    //    }
 }
 
 extension ViewController: TableViewCellDelegate {
     
-
+    
     
     func takePhotoFromCell(cell: TableViewCell) {
         self.photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in

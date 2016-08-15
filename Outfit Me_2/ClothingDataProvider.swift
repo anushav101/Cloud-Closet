@@ -24,45 +24,23 @@ class ClothingDataProvider : NSObject{
         return ""
     }
     
-    func getAllClothing(success: (Bool) -> Void) {
+    func getAllClothing(success: (Bool) -> Void)  {
         let query = PFQuery(className: "Product")
         query.orderByDescending("createdAt")
         query.whereKey("category", equalTo: category)
-//        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.whereKey("user", equalTo: PFUser.currentUser()!)
-        
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            
             self.storedObjects = objects ?? []
             
             success(true)
             
-//            if let actualObjects = objects {
-            
-//                self.images = []
-                
-                // TODO: Move to cellForItemAtIndexPath in collection View
-//                for object in actualObjects {
-//                    
-//                    let userPicture = object["imageFile"] as! PFFile
-//                    userPicture.getDataInBackgroundWithBlock({
-//                        (imageData: NSData?, error: NSError?) -> Void in
-//                        if let error = error {
-//                            print(error.localizedDescription)
-//                            success(false)
-//                        } else {
-//                            let image = UIImage(data:imageData!)
-//                            self.images.append(image!)
-//                            success(true)
-//                        }
-//                    })
-//                }
-//            }
         }
+
+        
     }
 
     

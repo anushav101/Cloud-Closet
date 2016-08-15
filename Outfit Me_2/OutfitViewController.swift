@@ -12,10 +12,23 @@ class OutfitViewController: UIViewController {
     
     var storedObjects : [PFObject] = []
     
+    @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var publicButton: UIButton!
+    @IBOutlet weak var okayButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.modalView.hidden = true
+        
+        modalView.backgroundColor = UIColor.whiteColor()
+        modalView.layer.cornerRadius = 15
+        okayButton.layer.cornerRadius = 20
+        modalView.layer.borderWidth = 6
+        modalView.layer.borderColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75).CGColor
+        okayButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        okayButton.backgroundColor = UIColor(colorLiteralRed: 43/255, green: 161/255, blue: 160/255, alpha: 0.75)
+        
         
         publicButton.backgroundColor = UIColor.clearColor()
         publicButton.layer.cornerRadius = 5
@@ -30,9 +43,6 @@ class OutfitViewController: UIViewController {
         }
         
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
         storedObjects = []
         let query = PFQuery(className: "Outfits")
         query.whereKey("createdFor", equalTo: PFUser.currentUser()!)
@@ -44,10 +54,14 @@ class OutfitViewController: UIViewController {
                 return
             }
             
+            if objects!.count == 0 {
+                self.modalView.hidden = false
+            }
+            
             self.storedObjects = objects!
             
             dispatch_async(dispatch_get_main_queue(), {
-              
+                
                 self.tableView.reloadData()
             })
             
@@ -55,9 +69,45 @@ class OutfitViewController: UIViewController {
             
             
         }
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+//        storedObjects = []
+//        let query = PFQuery(className: "Outfits")
+//        query.whereKey("createdFor", equalTo: PFUser.currentUser()!)
+//        query.includeKey("createdBy")
+//        query.orderByDescending("createdAt")
+//        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//            
+//            if objects!.count == 0 {
+//                self.modalView.hidden = false
+//            }
+//            
+//            self.storedObjects = objects!
+//            
+//            dispatch_async(dispatch_get_main_queue(), {
+//              
+//                self.tableView.reloadData()
+//            })
+//            
+//            
+//            
+//            
+//        }
     }
     
     
+    @IBAction func okayButtonPressed(sender: AnyObject) {
+        
+        self.modalView.hidden = true
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
